@@ -18,9 +18,10 @@ Obrigatório:
 
 ## Config
 - `vercel.json`: framework `nextjs`, `npm ci`, `npm run build`
-- `package.json` → `engines.node`: `24.15.0` (pin)
+- `package.json` → `engines.node`: `^24.15.0` (major 24; Vercel só seleciona major)
 - `.npmrc`: `engine-strict=true`
-- `.nvmrc` / `.node-version`: `24.15.0`
+- `.nvmrc` / `.node-version`: `24`
+- Não pinne patch (`24.15.0`): a Vercel usa outra 24.x (ex.: 24.22.2) e `npm ci` falha com EBADENGINE
 - No dashboard Vercel, alinhar Node a **24.x** (evitar 26.x se houver regressão)
 
 ## Env vars

@@ -25,7 +25,8 @@ description: >-
 4. **Não** restaurar `@tailwindcss/turbopack` loader custom sem validar na Vercel
 5. CLI: conta multi-team → `--scope cubofordevs-votting` (projeto `website`)
 6. Envs: `NEXT_PUBLIC_SITE_URL`; submission mode default demo
-7. Se plugin Cursor Vercel sem tools: autenticar MCP / novo chat
+7. Node: `engines` como `^24.15.0` (nunca patch exato). Vercel roda 24.x e EBADENGINE quebra `npm ci` com pin `24.15.0`
+8. Se plugin Cursor Vercel sem tools: autenticar MCP / novo chat
 
 ## Aceite
 - [ ] Build local idêntico ao comando Vercel
