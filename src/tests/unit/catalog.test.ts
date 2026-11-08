@@ -62,5 +62,36 @@ describe("quote schemas", () => {
       schema.safeParse({ coverages: ["collision", "theft"] }).success,
     ).toBe(true);
   });
+
+  it("requires usage profile fields on auto usage step", () => {
+    const step = QUOTE_CONFIG.auto.steps.find((s) => s.id === "usage")!;
+    const schema = buildStepSchema(step);
+    expect(
+      schema.safeParse({
+        usage: "particular",
+        hasGasKit: "no",
+        hasAdditionalDrivers: "yes",
+        hasYoungDrivers: "no",
+        cep: "01310-100",
+        street: "Av. Paulista",
+        neighborhood: "Bela Vista",
+        city: "São Paulo",
+        state: "SP",
+      }).success,
+    ).toBe(true);
+    expect(
+      schema.safeParse({
+        usage: "",
+        hasGasKit: "",
+        hasAdditionalDrivers: "",
+        hasYoungDrivers: "",
+        cep: "01310-100",
+        street: "Av. Paulista",
+        neighborhood: "Bela Vista",
+        city: "São Paulo",
+        state: "SP",
+      }).success,
+    ).toBe(false);
+  });
 });
 

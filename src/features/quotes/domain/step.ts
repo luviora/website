@@ -11,6 +11,8 @@ export type FieldType =
   | "cep"
   | "currency"
   | "checkbox"
+  | "choiceCards"
+  | "yesNo"
   | "coverageCards"
   | "fipeBrand"
   | "fipeModel"

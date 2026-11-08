@@ -49,17 +49,52 @@ export const QUOTE_CONFIG: Record<ProductType, QuoteProductConfig> = {
         id: "usage",
         title: "Como você usa o carro?",
         description:
-          "Conte o uso principal e onde ele passa a noite. O endereço sai do CEP automaticamente.",
+          "Uso, kit gás e condutores entram na cotação padrão. Depois, o CEP de pernoite.",
         fields: [
           {
             name: "usage",
             label: "Uso principal",
-            type: "select",
+            type: "choiceCards",
             required: true,
             options: [
-              { value: "particular", label: "Particular" },
-              { value: "app", label: "Aplicativo / trabalho" },
+              {
+                value: "particular",
+                label: "Particular",
+                description: "Uso no dia a dia, lazer e trajeto casa-trabalho.",
+              },
+              {
+                value: "commercial",
+                label: "Comercial / trabalho",
+                description:
+                  "Visitas, entregas ou deslocamento a trabalho com frequência.",
+              },
+              {
+                value: "app",
+                label: "Aplicativo",
+                description: "Motorista de app (Uber, 99 e similares).",
+              },
             ],
+          },
+          {
+            name: "hasGasKit",
+            label: "O veículo possui kit gás (GNV)?",
+            type: "yesNo",
+            required: true,
+            helper: "Kit GNV instalado altera o perfil de risco da cotação.",
+          },
+          {
+            name: "hasAdditionalDrivers",
+            label: "Há mais condutores além de você?",
+            type: "yesNo",
+            required: true,
+            helper: "Outras pessoas que dirigem o carro com frequência.",
+          },
+          {
+            name: "hasYoungDrivers",
+            label: "Algum condutor tem menos de 26 anos?",
+            type: "yesNo",
+            required: true,
+            helper: "Inclui você ou qualquer outro condutor habitual.",
           },
           {
             name: "cep",

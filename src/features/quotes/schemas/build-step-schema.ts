@@ -65,6 +65,13 @@ function fieldSchema(field: QuoteField) {
         ? coverages
         : z.union([z.array(z.string()), z.literal(undefined)]).optional();
     }
+    case "choiceCards":
+    case "yesNo": {
+      const choice = z.string().min(1, "Selecione uma opção");
+      return field.required
+        ? choice
+        : z.union([z.literal(""), choice]).optional();
+    }
     case "fipeBrand":
     case "fipeModel":
     case "fipeYear": {

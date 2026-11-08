@@ -149,7 +149,7 @@ export function QuoteFlow({ product }: { product: ProductType }) {
             width={2172}
             height={724}
             priority
-            className="h-9 w-auto sm:h-10"
+            className="h-[2.7rem] w-auto sm:h-12"
           />
         </Link>
         <p className="mt-2 text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-brand-green/80">

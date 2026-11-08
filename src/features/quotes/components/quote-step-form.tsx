@@ -22,7 +22,12 @@ import {
   FormTextInput,
   NativeSelect,
 } from "@/components/ui/form-controls";
+import { AUTO_USAGE_OPTIONS } from "@/content/auto-usage";
 import { CepAddressFields } from "@/features/quotes/components/cep-address-fields";
+import {
+  ChoiceCardsField,
+  YesNoField,
+} from "@/features/quotes/components/choice-cards-field";
 import { CoverageCardsField } from "@/features/quotes/components/coverage-cards-field";
 import { FipeVehicleFields } from "@/features/quotes/components/fipe-vehicle-fields";
 import { cn } from "@/lib/utils";
@@ -134,6 +139,52 @@ export function QuoteStepForm({
             | undefined;
           const id = `${product}-${field.name}`;
           const mask = MASKERS[field.type];
+
+          if (field.type === "choiceCards") {
+            const options =
+              field.name === "usage"
+                ? AUTO_USAGE_OPTIONS
+                : (field.options || []).map((opt) => ({
+                    value: opt.value,
+                    label: opt.label,
+                    description: opt.description,
+                  }));
+            return (
+              <Controller
+                key={field.name}
+                name={field.name}
+                control={form.control}
+                render={({ field: rhf, fieldState }) => (
+                  <ChoiceCardsField
+                    legend={field.label}
+                    options={options}
+                    value={String(rhf.value ?? "")}
+                    onChange={rhf.onChange}
+                    error={fieldState.error?.message || error}
+                  />
+                )}
+              />
+            );
+          }
+
+          if (field.type === "yesNo") {
+            return (
+              <Controller
+                key={field.name}
+                name={field.name}
+                control={form.control}
+                render={({ field: rhf, fieldState }) => (
+                  <YesNoField
+                    legend={field.label}
+                    helper={field.helper}
+                    value={String(rhf.value ?? "")}
+                    onChange={rhf.onChange}
+                    error={fieldState.error?.message || error}
+                  />
+                )}
+              />
+            );
+          }
 
           if (field.type === "checkbox") {
             return (
