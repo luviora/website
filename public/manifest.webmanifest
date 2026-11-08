@@ -1,0 +1,16 @@
+{
+  "name": "Nuviora",
+  "short_name": "Nuviora",
+  "description": "Seguros e empréstimos com clareza",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8F8F4",
+  "theme_color": "#102D30",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

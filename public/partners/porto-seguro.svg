@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" role="img" aria-label="Porto Seguro">
+  <rect width="200" height="48" fill="none"/>
+  <path fill="#004B87" d="M24 8c-6 0-10 4-10 10v12c0 6 4 10 10 10s10-4 10-10V18c0-6-4-10-10-10Zm0 4c3 0 5 2 5 6v12c0 4-2 6-5 6s-5-2-5-6V18c0-4 2-6 5-6Z"/>
+  <path fill="#00ADEF" d="M24 14 18 34h4l2-6h4l2 6h4L28 14h-4Z"/>
+  <text x="52" y="31" font-family="system-ui,Arial,sans-serif" font-size="20" font-weight="700" fill="#004B87">porto seguro</text>
+</svg>

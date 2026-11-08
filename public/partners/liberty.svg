@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 48" role="img" aria-label="Liberty Seguros">
+  <rect x="4" y="10" width="12" height="28" rx="1" fill="#FFCC00"/>
+  <rect x="16" y="10" width="12" height="28" rx="1" fill="#1E4F9A"/>
+  <text x="36" y="31" font-family="system-ui,Arial,sans-serif" font-size="16" font-weight="700" fill="#1E4F9A">Liberty Seguros</text>
+</svg>

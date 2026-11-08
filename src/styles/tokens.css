@@ -1,0 +1,56 @@
+/* Nuviora brand tokens — canonical values from brand guidelines */
+
+:root {
+  --brand-navy: #102d30;
+  --brand-ink: #173b3a;
+  --brand-green: #21866c;
+  --brand-mint: #b8f5d5;
+  --brand-cream: #f8f8f4;
+  --surface-base: #ffffff;
+  --border-subtle: #dfe8e3;
+  --text-muted: #6e827c;
+
+  --background: var(--brand-cream);
+  --foreground: var(--brand-navy);
+
+  --card: var(--surface-base);
+  --card-foreground: var(--brand-navy);
+
+  --primary: var(--brand-navy);
+  --primary-foreground: var(--brand-cream);
+
+  --secondary: var(--brand-mint);
+  --secondary-foreground: var(--brand-navy);
+
+  --muted: #eef3f0;
+  --muted-foreground: var(--text-muted);
+
+  --accent: var(--brand-green);
+  --accent-foreground: var(--surface-base);
+
+  --destructive: #b42318;
+  --destructive-foreground: var(--surface-base);
+
+  --success: var(--brand-green);
+  --warning: #c47a17;
+
+  --border: var(--border-subtle);
+  --input: var(--border-subtle);
+  --ring: var(--brand-green);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 28px;
+
+  --shadow-input: 0 1px 2px rgb(16 45 48 / 0.04);
+  --shadow-input-focus: 0 0 0 4px rgb(33 134 108 / 0.12), 0 4px 14px rgb(16 45 48 / 0.08);
+  --shadow-elevated: 0 12px 40px rgb(16 45 48 / 0.08);
+  --shadow-card-hover: 0 16px 48px rgb(16 45 48 / 0.12);
+
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-ui: 200ms;
+  --duration-step: 240ms;
+}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" role="img" aria-label="Tokio Marine">
+  <rect x="4" y="10" width="32" height="28" rx="2" fill="#1A6B4A"/>
+  <path fill="#fff" d="M12 18h16v3H12v-3Zm0 6h16v3H12v-3Z"/>
+  <text x="44" y="31" font-family="system-ui,Arial,sans-serif" font-size="16" font-weight="700" fill="#1A6B4A">Tokio Marine</text>
+</svg>

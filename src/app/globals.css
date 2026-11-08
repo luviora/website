@@ -1,0 +1,210 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../styles/tokens.css";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-green: var(--brand-green);
+  --color-brand-mint: var(--brand-mint);
+  --color-brand-cream: var(--brand-cream);
+
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-manrope);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1,
+  h2 {
+    font-family: var(--font-manrope), system-ui, sans-serif;
+    letter-spacing: -0.025em;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--brand-mint) 55%, white);
+    color: var(--brand-navy);
+  }
+}
+
+/* Hero: solid navy plane + soft light — Pier/Loovi contraste, identidade Nuviora */
+.hero-gradient {
+  background:
+    radial-gradient(ellipse 90% 70% at 85% 20%, rgb(33 134 108 / 0.18), transparent 55%),
+    linear-gradient(165deg, #0b2224 0%, #102d30 48%, #153a38 100%);
+}
+
+.prefooter-surface {
+  background: linear-gradient(165deg, #0b2224 0%, #102d30 55%, #143c38 100%);
+}
+
+/* Scroll reveal — fade + rise + slight blur */
+.reveal {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 0.7s var(--ease-standard),
+    transform 0.7s var(--ease-standard),
+    filter 0.7s var(--ease-standard);
+  will-change: opacity, transform, filter;
+}
+
+.reveal--in {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0);
+}
+
+.reveal--left {
+  transform: translate3d(-24px, 0, 0);
+}
+
+.reveal--left.reveal--in {
+  transform: translate3d(0, 0, 0);
+}
+
+.reveal--scale {
+  transform: translate3d(0, 16px, 0) scale(0.97);
+}
+
+.reveal--scale.reveal--in {
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+@keyframes step-enter {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes faq-open {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pipeline-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(33 134 108 / 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgb(33 134 108 / 0);
+  }
+}
+
+.pipeline-node--active {
+  animation: pipeline-pulse 2.2s var(--ease-standard) infinite;
+}
+
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0 1.5px;
+  transition: background-size 0.3s var(--ease-standard);
+}
+
+.link-underline:hover {
+  background-size: 100% 1.5px;
+}
+
+.footer-loovi a:focus-visible {
+  outline: 2px solid rgb(184 245 213 / 0.65);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal--in,
+  .reveal--left,
+  .reveal--scale {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+
+  .pipeline-node--active {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  .faq-details summary {
+    transition: color var(--duration-ui) var(--ease-standard);
+  }
+
+  .faq-details[open] summary {
+    color: var(--brand-navy);
+  }
+
+  .faq-details .faq-answer {
+    animation: faq-open var(--duration-step) var(--ease-standard);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-details .faq-answer {
+    animation: none;
+  }
+}

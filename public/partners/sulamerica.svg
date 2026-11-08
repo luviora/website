@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 48" role="img" aria-label="SulAm�rica">
+  <circle cx="22" cy="24" r="16" fill="none" stroke="#005D99" stroke-width="4"/>
+  <path fill="#005D99" d="M22 12v24M14 24h16" stroke="#005D99" stroke-width="3" stroke-linecap="round"/>
+  <text x="46" y="31" font-family="system-ui,Arial,sans-serif" font-size="19" font-weight="700" fill="#005D99">SulAm�rica</text>
+</svg>
