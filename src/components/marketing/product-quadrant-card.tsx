@@ -28,7 +28,7 @@ export function ProductQuadrantCard({ product }: { product: ProductDefinition })
       />
       <div
         className={cn(
-          "pointer-events-none absolute -right-8 top-0 h-40 w-40 rounded-full bg-gradient-to-bl opacity-80 blur-2xl",
+          "pointer-events-none absolute -right-4 top-0 h-32 w-32 rounded-full bg-gradient-to-bl opacity-80 blur-2xl sm:-right-8 sm:h-40 sm:w-40",
           visual.accent,
         )}
         aria-hidden

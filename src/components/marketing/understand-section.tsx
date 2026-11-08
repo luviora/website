@@ -14,7 +14,7 @@ export function UnderstandSection() {
 
         <ul className="mt-10 max-w-3xl divide-y divide-border/80 border-y border-border/80">
           {understand.items.map((item, index) => (
-            <Reveal key={item} as="li" delay={index * 80} variant="right">
+            <Reveal key={item} as="li" delay={index * 80} variant="up">
               <p className="py-5 text-sm leading-relaxed text-muted-foreground transition-colors duration-300 hover:text-brand-ink sm:text-base">
                 {item}
               </p>

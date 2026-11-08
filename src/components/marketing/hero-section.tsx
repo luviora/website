@@ -8,14 +8,14 @@ import { cn } from "@/lib/utils";
 export function HeroSection() {
   const { hero } = siteCopy;
   return (
-    <section className="hero-gradient relative z-0 -mt-[4.25rem] overflow-x-clip text-brand-cream">
+    <section className="hero-gradient relative z-0 -mt-[4.25rem] overflow-hidden text-brand-cream">
       <div className="hero-gradient-motion" aria-hidden>
         <span />
         <span />
         <span />
       </div>
       {/* pb reserva a faixa onde ~30% do cotador sobrepõe o hero */}
-      <Container className="relative z-10 grid min-h-[min(100vh,920px)] grid-cols-1 items-center gap-8 pt-[calc(4.25rem+2.25rem)] pb-24 sm:pb-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:pb-32 lg:pt-[calc(4.25rem+3rem)]">
+      <Container className="relative z-10 grid min-h-[min(100dvh,920px)] grid-cols-1 items-center gap-8 pt-[calc(4.25rem+2.25rem)] pb-24 sm:pb-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:pb-32 lg:pt-[calc(4.25rem+3rem)]">
         <div className="max-w-[36rem] motion-safe:animate-[step-enter_0.7s_var(--ease-standard)]">
           <h1 className="font-display text-[clamp(2.25rem,5vw,3.65rem)] font-extrabold leading-[1.05] tracking-[-0.03em] text-white">
             {hero.title}

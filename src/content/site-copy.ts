@@ -21,28 +21,34 @@ export const siteCopy = {
   },
   trust: {
     label: "Por que a Nuviora",
-    title: "Clareza do início às propostas",
+    title: "Simule com clareza e chegue às melhores propostas",
     description:
-      "Três movimentos simples para simular com confiança e chegar às melhores opções dos parceiros.",
-    pipelineHint: "Explore a jornada: toque em cada etapa",
+      "Quatro movimentos simples. Do primeiro toque até as opções dos parceiros, no seu ritmo.",
+    pipelineHint: "Toque em cada etapa e veja como a jornada funciona",
     items: [
       {
         title: "Poucos passos",
-        body: "Só o essencial. Cada pergunta aproxima você da proposta certa.",
+        body: "Só o que importa. Sem formulário infinito.",
         pipelineDetail:
-          "Blocos curtos por produto: veículo, imóvel, locação ou crédito. Você avança sem formulário infinito.",
+          "Perguntas curtas por produto: veículo, imóvel, locação ou crédito. Você avança rápido e sem complicação.",
       },
       {
         title: "Linguagem clara",
-        body: "Franquia, garantia e riscos em português direto.",
+        body: "Explicamos tudo em português simples, sem juridiquês.",
         pipelineDetail:
-          "Traduzimos o juridiquês: o que significa, por que pedimos e o que muda na sua simulação.",
+          "Franquia, garantia e riscos ficam fáceis de entender. Você sabe o que pedimos e por quê.",
       },
       {
         title: "Você no controle",
-        body: "Revise o resumo e só então decida seguir para as propostas.",
+        body: "Revise o resumo e só então decida o próximo passo.",
         pipelineDetail:
-          "Antes de qualquer envio, o resumo é seu. No demo, os dados ficam só na sessão.",
+          "Nada segue sem a sua confirmação. No demo, os dados ficam só na sua sessão.",
+      },
+      {
+        title: "As melhores propostas",
+        body: "Quando a operação estiver ativa, os parceiros trazem as melhores opções para o seu caso.",
+        pipelineDetail:
+          "A Nuviora organiza a simulação. As propostas vêm de seguradoras e instituições financeiras parceiras, com clareza para você comparar.",
       },
     ],
     photoCaption: "Decisões do dia a dia, no seu tempo.",

@@ -9,7 +9,7 @@ export function SiteFooter() {
   const { legal } = footer;
 
   return (
-    <footer className="footer-loovi mt-auto bg-[#0b1f20] text-white">
+    <footer className="footer-loovi mt-auto bg-[#0b1f20] pb-[env(safe-area-inset-bottom,0px)] text-white">
       <Container className="py-14 sm:py-16">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-4">

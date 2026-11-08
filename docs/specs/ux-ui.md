@@ -65,6 +65,14 @@
 - `focus-visible` em CTAs e tiles
 - FAQ: preferir accordion acessível / details nativo
 
+## Mobile iOS / Android
+- `viewport-fit=cover` + `env(safe-area-inset-*)` no header/footer/body
+- `overflow-x: clip` + `overscroll-behavior-x: none` (sem pan horizontal)
+- Inputs/select/textarea ≥ 16px (evita zoom iOS no foco)
+- `touch-action: manipulation` em controles
+- Preferir `dvh` no hero em vez de `vh` puro
+- Não desativar zoom do usuário (`user-scalable`)
+
 ## Layout shell
 - `(marketing)`: `SiteHeader` + `SiteFooter`
 - `(quote)`: **sem** header/footer de marketing — shell próprio do cotador

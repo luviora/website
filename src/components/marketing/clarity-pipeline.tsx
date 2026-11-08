@@ -1,11 +1,17 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { Check, FileCheck2, Layers3, MessageCircleHeart } from "lucide-react";
+import {
+  Check,
+  FileCheck2,
+  Handshake,
+  Layers3,
+  MessageCircleHeart,
+} from "lucide-react";
 import { siteCopy } from "@/content/site-copy";
 import { cn } from "@/lib/utils";
 
-const icons = [Layers3, FileCheck2, MessageCircleHeart] as const;
+const icons = [Layers3, MessageCircleHeart, FileCheck2, Handshake] as const;
 
 export function ClarityPipeline() {
   const { trust } = siteCopy;
@@ -38,20 +44,20 @@ export function ClarityPipeline() {
         aria-label="Etapas da jornada Nuviora"
       >
         <div className="hidden md:block">
-          <div className="relative px-4">
-            <div className="absolute left-10 right-10 top-[1.35rem] h-px bg-border" aria-hidden />
+          <div className="relative px-2 lg:px-4">
+            <div className="absolute left-8 right-8 top-[1.35rem] h-px bg-border" aria-hidden />
             <div
-              className="absolute left-10 top-[1.35rem] h-px bg-brand-green transition-[width] duration-500 ease-[var(--ease-standard)]"
-              style={{ width: `calc((100% - 5rem) * ${progressPct / 100})` }}
+              className="absolute left-8 top-[1.35rem] h-px bg-brand-green transition-[width] duration-500 ease-[var(--ease-standard)]"
+              style={{ width: `calc((100% - 4rem) * ${progressPct / 100})` }}
               aria-hidden
             />
-            <ol className="relative flex justify-between">
+            <ol className="relative flex justify-between gap-1">
               {steps.map((step, index) => {
                 const Icon = icons[index] ?? Layers3;
                 const isActive = index === active;
                 const isDone = index < active;
                 return (
-                  <li key={step.title} className="flex flex-1 flex-col items-center">
+                  <li key={step.title} className="flex min-w-0 flex-1 flex-col items-center">
                     <button
                       type="button"
                       role="tab"
@@ -60,7 +66,7 @@ export function ClarityPipeline() {
                       id={`pipeline-tab-${index}`}
                       onClick={() => setActive(index)}
                       onKeyDown={(e) => onKey(index, e)}
-                      className="group flex flex-col items-center gap-3 focus-visible:outline-none"
+                      className="group flex min-h-11 w-full flex-col items-center gap-3 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-2"
                     >
                       <span
                         className={cn(
@@ -69,7 +75,7 @@ export function ClarityPipeline() {
                             "pipeline-node--active border-brand-green bg-brand-green text-white",
                           isDone &&
                             !isActive &&
-                            "border-brand-green bg-brand-mint/40 text-brand-green",
+                            "border-brand-green bg-white text-brand-green",
                           !isActive &&
                             !isDone &&
                             "border-border bg-white text-muted-foreground group-hover:border-brand-green/40",
@@ -78,12 +84,12 @@ export function ClarityPipeline() {
                         {isDone && !isActive ? (
                           <Check className="size-4" strokeWidth={2.25} aria-hidden />
                         ) : (
-                          <Icon className="size-4.5 size-[1.15rem]" strokeWidth={1.7} aria-hidden />
+                          <Icon className="size-[1.15rem]" strokeWidth={1.7} aria-hidden />
                         )}
                       </span>
                       <span
                         className={cn(
-                          "max-w-[8.5rem] text-center text-sm font-medium transition-colors",
+                          "max-w-[7.5rem] text-center text-xs font-medium leading-snug transition-colors lg:max-w-[8.5rem] lg:text-sm",
                           isActive ? "text-brand-navy" : "text-muted-foreground",
                         )}
                       >
@@ -108,10 +114,14 @@ export function ClarityPipeline() {
                   role="tab"
                   aria-selected={isActive}
                   aria-controls="pipeline-panel"
+                  id={`pipeline-tab-mobile-${index}`}
                   onClick={() => setActive(index)}
                   className={cn(
-                    "flex w-full items-center gap-3 rounded-xl px-4 py-3.5 text-left transition-colors duration-300",
-                    isActive ? "bg-brand-navy text-white" : "bg-white text-brand-ink ring-1 ring-border/70",
+                    "flex min-h-12 w-full items-center gap-3 rounded-xl px-4 py-3.5 text-left touch-manipulation transition-colors duration-300",
+                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-2",
+                    isActive
+                      ? "bg-brand-navy text-white"
+                      : "bg-white text-brand-ink ring-1 ring-border/70",
                   )}
                 >
                   <Icon className="size-5 shrink-0" strokeWidth={1.7} aria-hidden />
@@ -133,7 +143,7 @@ export function ClarityPipeline() {
             <span className="hidden size-12 shrink-0 items-center justify-center rounded-xl bg-brand-mint/50 text-brand-green sm:inline-flex">
               <ActiveIcon className="size-6" strokeWidth={1.6} aria-hidden />
             </span>
-            <div>
+            <div className="min-w-0">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-green">
                 Etapa {active + 1} de {steps.length}
               </p>
@@ -144,12 +154,12 @@ export function ClarityPipeline() {
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-brand-ink/85">
                 {activeStep.pipelineDetail}
               </p>
-              <div className="mt-6 flex gap-2">
+              <div className="mt-6 flex flex-wrap gap-2">
                 <button
                   type="button"
                   disabled={active === 0}
                   onClick={() => setActive((i) => i - 1)}
-                  className="rounded-lg px-4 py-2.5 text-sm font-medium text-brand-ink ring-1 ring-border transition-colors hover:bg-white disabled:opacity-35"
+                  className="min-h-11 touch-manipulation rounded-lg px-4 py-2.5 text-sm font-medium text-brand-ink ring-1 ring-border transition-colors hover:bg-white disabled:opacity-35"
                 >
                   Anterior
                 </button>
@@ -157,7 +167,7 @@ export function ClarityPipeline() {
                   type="button"
                   disabled={active === steps.length - 1}
                   onClick={() => setActive((i) => i + 1)}
-                  className="rounded-lg bg-brand-navy px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-ink disabled:opacity-35"
+                  className="min-h-11 touch-manipulation rounded-lg bg-brand-navy px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-ink disabled:opacity-35"
                 >
                   Próxima etapa
                 </button>

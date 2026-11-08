@@ -23,12 +23,7 @@ export function ProductsSection() {
 
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:gap-6">
           {PRODUCTS.map((product, index) => (
-            <Reveal
-              key={product.id}
-              as="li"
-              delay={index * 100}
-              variant={index % 2 === 0 ? "left" : "right"}
-            >
+            <Reveal key={product.id} as="li" delay={index * 100} variant="scale">
               <ProductQuadrantCard product={product} />
             </Reveal>
           ))}

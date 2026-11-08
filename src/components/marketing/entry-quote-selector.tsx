@@ -14,7 +14,7 @@ export function EntryQuoteSelector() {
   return (
     <aside
       id="cotador"
-      className="scroll-mt-28 overflow-hidden rounded-2xl bg-white shadow-[0_24px_64px_rgb(16_45_48/0.16)] ring-1 ring-black/[0.05]"
+      className="scroll-mt-28 overflow-hidden rounded-none bg-white shadow-[0_24px_64px_rgb(16_45_48/0.16)] ring-1 ring-black/[0.05] sm:rounded-2xl"
       aria-labelledby="cotador-title"
     >
       <div

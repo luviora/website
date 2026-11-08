@@ -32,6 +32,16 @@ export const metadata: Metadata = {
     icon: [{ url: "/favicon.ico", sizes: "any" }],
     apple: [{ url: "/favicon.ico" }],
   },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Nuviora",
+  },
+  formatDetection: {
+    telephone: false,
+    email: false,
+    address: false,
+  },
   openGraph: {
     title: "Nuviora | Proteção e crédito sem complicar",
     description:
@@ -42,7 +52,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#102D30",
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#F8F8F4" },
+    { media: "(prefers-color-scheme: dark)", color: "#102D30" },
+  ],
+  colorScheme: "light",
 };
 
 export default function RootLayout({
@@ -51,11 +68,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${manrope.variable} ${dmSans.variable} h-full`}>
-      <body className="min-h-full flex flex-col">
+    <html
+      lang="pt-BR"
+      className={`${manrope.variable} ${dmSans.variable} h-full`}
+    >
+      <body className="flex min-h-dvh flex-col overscroll-x-none">
         <a
           href="#conteudo"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-[max(1rem,env(safe-area-inset-top))] focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
         >
           Ir para o conteúdo
         </a>
