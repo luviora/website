@@ -24,10 +24,26 @@ describe("quote schemas", () => {
     const schema = buildStepSchema(step);
     const result = schema.safeParse({
       name: "Ana",
+      cpf: "529.982.247-25",
+      phone: "(11) 98765-4321",
       email: "ana@example.com",
       consent: false,
     });
     expect(result.success).toBe(false);
+  });
+
+  it("accepts valid masked contact on auto", () => {
+    const step = QUOTE_CONFIG.auto.steps.find((s) => s.id === "contact")!;
+    const schema = buildStepSchema(step);
+    expect(
+      schema.safeParse({
+        name: "Ana",
+        cpf: "529.982.247-25",
+        phone: "(11) 98765-4321",
+        email: "ana@example.com",
+        consent: true,
+      }).success,
+    ).toBe(true);
   });
 
   it("accepts PF/PJ on emprestimos profile", () => {
@@ -37,4 +53,14 @@ describe("quote schemas", () => {
       schema.safeParse({ customerType: "PJ", purpose: "working-capital" }).success,
     ).toBe(true);
   });
+
+  it("requires at least one auto coverage", () => {
+    const step = QUOTE_CONFIG.auto.steps.find((s) => s.id === "coverage")!;
+    const schema = buildStepSchema(step);
+    expect(schema.safeParse({ coverages: [] }).success).toBe(false);
+    expect(
+      schema.safeParse({ coverages: ["collision", "theft"] }).success,
+    ).toBe(true);
+  });
 });
+

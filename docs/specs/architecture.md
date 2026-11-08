@@ -51,6 +51,8 @@ src/
 | `/solicitacao/[id]` | Status |
 | `/privacidade`, `/termos` | Legal |
 | `POST /api/quote-requests` | BFF |
+| `GET /api/fipe/...` | Proxy Tabela FIPE (marcas/modelos/anos) |
+| `GET /api/cep/[cep]` | Proxy ViaCEP (endereço) |
 
 ## Qualidade
 Comandos obrigatórios após mudanças relevantes:

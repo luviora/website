@@ -5,17 +5,13 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useId, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { siteCopy } from "@/content/site-copy";
+import { primaryNav } from "@/content/nav";
 import { Logo } from "@/components/brand/logo";
 import { Container } from "@/components/layout/container";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const nav = [
-  { label: "Seguros", href: "/#produtos" },
-  { label: "Empréstimos", href: "/emprestimos" },
-  { label: "Como funciona", href: "/como-funciona" },
-  { label: "Dúvidas", href: "/duvidas" },
-];
+const nav = primaryNav;
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -59,12 +55,15 @@ export function SiteHeader() {
       <Container>
         <div className="flex h-16 items-center justify-between gap-4 sm:h-[4.25rem]">
           <Logo />
-          <nav className="hidden items-center gap-7 md:flex" aria-label="Principal">
+          <nav
+            className="hidden items-center gap-4 lg:flex xl:gap-6"
+            aria-label="Principal"
+          >
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-brand-ink/90 link-underline transition-colors duration-200 hover:text-brand-green"
+                className="whitespace-nowrap text-sm font-medium text-brand-ink/90 link-underline transition-colors duration-200 hover:text-brand-green"
               >
                 {item.label}
               </Link>
@@ -81,7 +80,7 @@ export function SiteHeader() {
               type="button"
               variant="ghost"
               size="icon"
-              className="size-11 touch-manipulation md:hidden"
+              className="size-11 touch-manipulation lg:hidden"
               aria-expanded={open}
               aria-controls={drawerId}
               aria-haspopup="dialog"
@@ -97,7 +96,7 @@ export function SiteHeader() {
       {/* Drawer fullscreen mobile: abre/fecha por toggle, link ou Escape */}
       <div
         className={cn(
-          "fixed inset-0 z-[60] md:hidden",
+          "fixed inset-0 z-[60] lg:hidden",
           open ? "pointer-events-auto" : "pointer-events-none",
         )}
         aria-hidden={!open}

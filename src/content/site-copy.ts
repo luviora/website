@@ -94,6 +94,9 @@ export const siteCopy = {
     linksTitle: "Links úteis",
     usefulLinks: [
       { label: "Como funciona", href: "/como-funciona" },
+      { label: "Abrir sinistro", href: "/abrir-sinistro" },
+      { label: "Para corretores", href: "/para-corretores" },
+      { label: "Minhas cotações", href: "/minhas-cotacoes" },
       { label: "Perguntas frequentes", href: "/duvidas" },
       { label: "Política de privacidade", href: "/privacidade" },
       { label: "Termos de uso", href: "/termos" },
@@ -192,7 +195,7 @@ export const siteCopy = {
 export const productPages = {
   auto: {
     title: "Seguro Auto",
-    body: "Proteja o carro do jeito que você usa. Conte sobre o veículo e suas preferências de cobertura. Nesta demonstração não consultamos FIPE nem placa. Na operação real, as propostas vêm dos parceiros.",
+    body: "Proteja o carro do jeito que você usa. Marca e modelo vêm da tabela FIPE com autocomplete. Preferências de cobertura e propostas reais vêm dos parceiros na operação integrada.",
     cta: "Simular seguro auto",
   },
   incendio: {
@@ -216,15 +219,15 @@ export const productPages = {
 export const productCopy = {
   auto: {
     short: "Proteja o carro e avance até as melhores propostas.",
-    cotadorHint: "Vamos conhecer seu carro",
+    cotadorHint: "Qual é o seu carro?",
   },
   incendio: {
     short: "Imóvel residencial ou comercial, com clareza até a proposta.",
-    cotadorHint: "Conte sobre o imóvel",
+    cotadorHint: "Conte um pouco sobre o imóvel",
   },
   fianca: {
     short: "Locação mais simples, com análise e propostas dos parceiros.",
-    cotadorHint: "Informe o aluguel e o perfil",
+    cotadorHint: "Quem vai locar?",
   },
   emprestimos: {
     short: "Crédito PF e PJ, com garantia quando fizer sentido.",

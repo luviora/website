@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+import { getSiteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const siteUrl = getSiteUrl();
   const routes = [
     "",
     "/como-funciona",
@@ -11,11 +11,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/seguros/auto",
     "/seguros/incendio",
     "/seguros/fianca",
+    "/abrir-sinistro",
+    "/para-corretores",
+    "/minhas-cotacoes",
     "/privacidade",
     "/termos",
   ];
+  const now = new Date();
   return routes.map((path) => ({
     url: `${siteUrl}${path}`,
-    lastModified: "2026-01-01",
+    lastModified: now,
+    changeFrequency: path === "" ? "weekly" : "monthly",
+    priority: path === "" ? 1 : 0.7,
   }));
 }

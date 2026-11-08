@@ -1,5 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Manrope } from "next/font/google";
+import { JsonLd } from "@/components/seo/json-ld";
+import {
+  getSiteUrl,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TAGLINE,
+} from "@/lib/site";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -16,17 +23,35 @@ const dmSans = DM_Sans({
   weight: ["400", "500", "600"],
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = getSiteUrl();
+const ogTitle = `${SITE_NAME} | ${SITE_TAGLINE}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Nuviora | Proteção e crédito sem complicar",
-    template: "%s | Nuviora",
+    default: ogTitle,
+    template: `%s | ${SITE_NAME}`,
   },
-  description:
-    "Proteção e crédito que cabem no seu momento de vida. Simule em minutos e compare propostas de parceiros, com passos claros e sem preço inventado.",
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  keywords: [
+    "Nuviora",
+    "seguro auto",
+    "seguro incêndio",
+    "seguro fiança",
+    "empréstimos",
+    "simulação",
+    "cotações",
+    "sinistro",
+    "corretores",
+  ],
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  category: "finance",
+  alternates: {
+    canonical: "/",
+  },
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [{ url: "/favicon.ico", sizes: "any" }],
@@ -35,7 +60,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Nuviora",
+    title: SITE_NAME,
   },
   formatDetection: {
     telephone: false,
@@ -43,11 +68,28 @@ export const metadata: Metadata = {
     address: false,
   },
   openGraph: {
-    title: "Nuviora | Proteção e crédito sem complicar",
-    description:
-      "Proteção e crédito que cabem no seu momento de vida. Simule em minutos e compare propostas de parceiros, com passos claros.",
-    locale: "pt_BR",
     type: "website",
+    locale: "pt_BR",
+    url: siteUrl,
+    siteName: SITE_NAME,
+    title: ogTitle,
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: ogTitle,
+    description: SITE_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -73,6 +115,7 @@ export default function RootLayout({
       className={`${manrope.variable} ${dmSans.variable} h-full`}
     >
       <body className="flex min-h-dvh flex-col overscroll-x-none">
+        <JsonLd />
         <a
           href="#conteudo"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-[max(1rem,env(safe-area-inset-top))] focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"

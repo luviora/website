@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { getProduct, isProductType } from "@/features/products/catalog";
 import { QuoteFlow } from "@/features/quotes/components/quote-flow";
@@ -23,5 +24,15 @@ export default async function CotarProductPage({ params }: PageProps) {
   if (!isProductType(product)) {
     notFound();
   }
-  return <QuoteFlow product={product} />;
+  return (
+    <Suspense
+      fallback={
+        <div className="flex flex-1 items-center justify-center px-4 py-16 text-sm text-muted-foreground">
+          Carregando simulação…
+        </div>
+      }
+    >
+      <QuoteFlow product={product} />
+    </Suspense>
+  );
 }

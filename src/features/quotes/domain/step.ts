@@ -1,11 +1,34 @@
-export type FieldType = "text" | "email" | "select" | "number" | "tel" | "checkbox";
+export type FieldType =
+  | "text"
+  | "email"
+  | "select"
+  | "number"
+  | "tel"
+  | "phone"
+  | "cpf"
+  | "cnpj"
+  | "document"
+  | "cep"
+  | "currency"
+  | "checkbox"
+  | "coverageCards"
+  | "fipeBrand"
+  | "fipeModel"
+  | "fipeYear"
+  | "hidden";
+
+export interface QuoteFieldOption {
+  value: string;
+  label: string;
+  description?: string;
+}
 
 export interface QuoteField {
   name: string;
   label: string;
   type: FieldType;
   placeholder?: string;
-  options?: { value: string; label: string }[];
+  options?: QuoteFieldOption[];
   helper?: string;
   required?: boolean;
 }
