@@ -11,11 +11,11 @@ export function PreFooterSection() {
   return (
     <section
       aria-labelledby="prefooter-title"
-      className="prefooter-surface relative overflow-x-clip pb-0 pt-16 sm:pt-20"
+      className="prefooter-surface relative pt-16 sm:pt-20"
     >
-      <Container className="relative pb-0">
-        <div className="grid gap-10 lg:grid-cols-[1fr_minmax(280px,420px)] lg:items-end lg:gap-12">
-          <Reveal className="lg:pb-16">
+      <Container className="relative z-[1] pb-0">
+        <div className="grid items-end gap-8 md:grid-cols-[1.05fr_0.95fr] md:gap-10">
+          <Reveal className="md:pb-14 lg:pb-16">
             <div className="max-w-xl text-brand-cream">
               <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-brand-mint">
                 {prefooter.eyebrow}
@@ -52,16 +52,16 @@ export function PreFooterSection() {
             </div>
           </Reveal>
 
-          <Reveal delay={120} className="flex items-end justify-center lg:justify-end">
+          <div className="relative z-[1] flex w-full justify-center md:justify-end">
             <Image
               src="/image/persons/person-2.png"
               alt="Pessoas em momento de decisão sobre proteção e crédito"
               width={1194}
               height={1317}
-              sizes="(max-width: 1024px) 90vw, 400px"
-              className="h-auto max-h-[min(52vh,480px)] w-auto max-w-[min(100%,460px)] object-contain object-bottom lg:max-h-[min(60vh,540px)]"
+              sizes="(max-width: 768px) 92vw, 42vw"
+              className="h-auto w-full max-w-[min(100%,380px)] object-contain object-bottom motion-safe:animate-[person-float_5.5s_var(--ease-standard)_infinite_alternate] sm:max-w-[440px] md:max-h-[min(58vh,520px)] lg:max-h-[min(62vh,560px)]"
             />
-          </Reveal>
+          </div>
         </div>
       </Container>
     </section>

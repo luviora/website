@@ -13,15 +13,19 @@ export function SiteFooter() {
       <Container className="py-14 sm:py-16">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-4">
-            <div className="inline-flex rounded-lg bg-white px-3 py-2">
+            <Link
+              href="/"
+              aria-label="Nuviora, início"
+              className="footer-logo-mark group inline-flex rounded-xl bg-white px-4 py-3 transition-[transform,box-shadow] duration-500 ease-[var(--ease-standard)] motion-safe:hover:-translate-y-1.5 motion-safe:hover:scale-[1.05] hover:shadow-[0_20px_48px_rgb(184_245_213/0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-mint/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b1f20]"
+            >
               <Image
                 src="/image/logo.png"
                 alt="Nuviora"
                 width={2172}
                 height={724}
-                className="h-8 w-auto sm:h-9"
+                className="relative z-[1] h-[2.99rem] w-auto transition-transform duration-500 ease-[var(--ease-standard)] motion-safe:group-hover:scale-[1.04] sm:h-[3.36rem]"
               />
-            </div>
+            </Link>
             <p className="mt-5 max-w-[18rem] text-sm leading-relaxed text-white/65">
               {footer.tagline}
             </p>
@@ -37,7 +41,7 @@ export function SiteFooter() {
                   <p className="text-xs text-white/40">{channel.label}</p>
                   <Link
                     href={channel.href}
-                    className="mt-0.5 inline-block text-base font-medium text-brand-mint link-underline"
+                    className="mt-0.5 inline-block text-base font-medium text-brand-mint link-underline transition-colors duration-300 hover:text-white"
                   >
                     {channel.display}
                   </Link>
@@ -60,7 +64,7 @@ export function SiteFooter() {
                 <li key={product.id}>
                   <Link
                     href={product.href}
-                    className="text-white/70 link-underline hover:text-white"
+                    className="text-white/70 link-underline transition-colors duration-300 hover:text-white"
                   >
                     {product.title}
                   </Link>
@@ -78,7 +82,7 @@ export function SiteFooter() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-white/70 link-underline hover:text-white"
+                    className="text-white/70 link-underline transition-colors duration-300 hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -89,7 +93,7 @@ export function SiteFooter() {
                   href={footer.susepLink.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/70 link-underline hover:text-white"
+                  className="text-white/70 link-underline transition-colors duration-300 hover:text-white"
                 >
                   Consulta SUSEP
                 </Link>
@@ -106,7 +110,7 @@ export function SiteFooter() {
               href={footer.susepLink.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-brand-mint underline underline-offset-2 hover:text-white"
+              className="text-brand-mint underline underline-offset-2 transition-colors duration-300 hover:text-white"
             >
               {footer.susepLink.label}
             </Link>

@@ -8,7 +8,7 @@ export type ProductVisual = {
   accent: string;
 };
 
-/** Fotos temáticas por linha — `public/image/products/*.jpg` (Unsplash, uso editorial). */
+/** Fotos temáticas por linha em `public/image/products/*.jpg` (Unsplash, uso editorial). */
 export const PRODUCT_VISUALS: Record<ProductType, ProductVisual> = {
   auto: {
     image: "/image/products/auto.jpg",

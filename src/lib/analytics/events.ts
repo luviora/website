@@ -13,7 +13,7 @@ export function trackEvent(
   properties?: Record<string, string | number | boolean>,
 ) {
   if (process.env.NODE_ENV === "development") {
-    // Telemetria sem PII — preparada para integração futura
+    // Telemetria sem PII. Preparada para integração futura.
     console.debug("[analytics]", event, properties);
   }
 }

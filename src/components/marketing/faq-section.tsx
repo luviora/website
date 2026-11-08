@@ -9,13 +9,13 @@ export function FaqSection() {
   return (
     <section className="bg-white py-16 sm:py-20">
       <Container>
-        <Reveal>
-          <SectionHeader label="FAQ" title={faq.sectionTitle} />
+        <Reveal variant="blur">
+          <SectionHeader label={faq.label} title={faq.sectionTitle} />
         </Reveal>
 
         <div className="mt-10 max-w-2xl">
           {faq.items.map((item, index) => (
-            <Reveal key={item.q} delay={index * 60}>
+            <Reveal key={item.q} delay={index * 70} variant="left">
               <details className="faq-details group border-b border-border/80">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-medium text-brand-ink marker:hidden transition-colors hover:text-brand-green [&::-webkit-details-marker]:hidden">
                   <span>{item.q}</span>

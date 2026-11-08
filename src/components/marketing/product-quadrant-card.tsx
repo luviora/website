@@ -12,13 +12,13 @@ export function ProductQuadrantCard({ product }: { product: ProductDefinition })
   const visual = PRODUCT_VISUALS[product.id];
 
   return (
-    <article className="group relative min-h-[min(340px,52vw)] overflow-hidden rounded-3xl border border-white/10 shadow-[0_12px_40px_rgb(16_45_48/0.12)] transition-[transform,box-shadow] duration-500 ease-[var(--ease-standard)] hover:-translate-y-1 hover:shadow-[var(--shadow-card-hover)] sm:min-h-[320px]">
+    <article className="group relative min-h-[min(340px,52vw)] overflow-hidden rounded-3xl border border-white/10 shadow-[0_12px_40px_rgb(16_45_48/0.12)] transition-[transform,box-shadow] duration-500 ease-[var(--ease-standard)] hover:-translate-y-2 hover:shadow-[0_28px_64px_rgb(16_45_48/0.22)] sm:min-h-[320px]">
       <Image
         src={visual.image}
         alt={visual.imageAlt}
         fill
         sizes="(max-width: 640px) 100vw, 50vw"
-        className="object-cover transition-transform duration-700 ease-[var(--ease-standard)] group-hover:scale-[1.04]"
+        className="object-cover transition-transform duration-[900ms] ease-[var(--ease-standard)] group-hover:scale-[1.08]"
         style={{ objectPosition: visual.objectPosition }}
       />
       <div

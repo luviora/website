@@ -10,14 +10,19 @@ export function HowItWorksSection() {
     <section className="bg-white py-16 sm:py-20">
       <Container>
         <Reveal>
-          <SectionHeader label="Jornada" title={howItWorks.title} />
+          <SectionHeader label={howItWorks.label} title={howItWorks.title} />
         </Reveal>
 
         <ol className="mt-14 grid gap-8 md:grid-cols-3 md:gap-6">
           {steps.map((step, index) => (
-            <Reveal key={step.title} as="li" delay={index * 110} variant="left">
-              <div className="relative h-full border-t-2 border-brand-mint pt-6">
-                <span className="font-display text-4xl font-extrabold tracking-tight text-brand-navy/15">
+            <Reveal
+              key={step.title}
+              as="li"
+              delay={index * 120}
+              variant={index % 2 === 0 ? "left" : "right"}
+            >
+              <div className="section-lift relative h-full rounded-2xl border-t-2 border-brand-mint bg-brand-cream/30 px-4 pb-5 pt-6 transition-colors duration-300 hover:bg-brand-mint/15">
+                <span className="font-display text-4xl font-extrabold tracking-tight text-brand-navy/15 transition-colors duration-300 group-hover:text-brand-green/25">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <h3 className="mt-3 font-display text-lg font-bold text-brand-navy">

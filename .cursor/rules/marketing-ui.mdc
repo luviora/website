@@ -1,0 +1,18 @@
+---
+description: UI marketing Nuviora — hero, seções, landings, motion
+globs: src/components/marketing/**/*.tsx,src/components/layout/**/*.tsx,src/components/motion/**/*.tsx,src/app/(marketing)/**/*.tsx
+alwaysApply: false
+---
+
+# Marketing UI
+
+Spec: `docs/specs/ux-ui.md` + `docs/specs/brand.md`
+
+- Uma composição por dobra; hero sem stats/chips/overlays
+- person-1 no hero; person-2 no prefooter (base)
+- Cotador entry `#cotador` ~80% width, overlap ~30% no hero; 4 tiles nome+número+BG
+- Quadrantes escuros editoriais; footer escuro Loovi-like **sem** carrossel de logos
+- Tokens em `tokens.css`; logo sem filtros
+- Motion via `Reveal`; `prefers-reduced-motion`
+- Anti-IA: sem mesh/orbs/glow roxo/glass em massa
+- Skill: `.cursor/skills/nuviora-ui/SKILL.md`

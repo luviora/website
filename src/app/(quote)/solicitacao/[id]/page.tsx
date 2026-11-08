@@ -20,12 +20,12 @@ export default async function SolicitacaoPage({
 }: PageProps) {
   const { id } = await params;
   const query = await searchParams;
-  const product = String(query.product ?? "—");
+  const product = String(query.product ?? "produto");
   const mode = String(query.mode ?? "demo");
 
   return (
     <div className="mx-auto flex w-full max-w-md flex-1 flex-col px-4 py-10 sm:py-14">
-      <Link href="/" className="mx-auto inline-flex" aria-label="Nuviora — início">
+      <Link href="/" className="mx-auto inline-flex" aria-label="Nuviora, início">
         <Image
           src="/image/logo.png"
           alt="Nuviora"

@@ -13,9 +13,9 @@ export function ProductsSection() {
       className="scroll-mt-24 bg-gradient-to-b from-white to-brand-cream/40 py-14 sm:py-16"
     >
       <Container>
-        <Reveal>
+        <Reveal variant="blur">
           <SectionHeader
-            label="Comece por aqui"
+            label={products.label}
             title={products.sectionTitle}
             description={products.sectionBody}
           />
@@ -23,7 +23,12 @@ export function ProductsSection() {
 
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:gap-6">
           {PRODUCTS.map((product, index) => (
-            <Reveal key={product.id} as="li" delay={index * 80} variant="scale">
+            <Reveal
+              key={product.id}
+              as="li"
+              delay={index * 100}
+              variant={index % 2 === 0 ? "left" : "right"}
+            >
               <ProductQuadrantCard product={product} />
             </Reveal>
           ))}

@@ -1,20 +1,22 @@
+import { siteCopy } from "@/content/site-copy";
 import { Reveal } from "@/components/motion/reveal";
 import { ClarityPipeline } from "@/components/marketing/clarity-pipeline";
 import { SectionHeader } from "@/components/marketing/section-header";
 import { Container } from "@/components/layout/container";
 
 export function TrustBenefits() {
+  const { trust } = siteCopy;
   return (
     <section className="bg-white py-16 sm:py-20">
       <Container>
-        <Reveal>
+        <Reveal variant="blur">
           <SectionHeader
-            label="Por que a Nuviora"
-            title="Clareza em cada etapa"
-            description="Três movimentos simples — no estilo das melhores jornadas digitais de seguro."
+            label={trust.label}
+            title={trust.title}
+            description={trust.description}
           />
         </Reveal>
-        <Reveal delay={100}>
+        <Reveal delay={140} variant="scale">
           <ClarityPipeline />
         </Reveal>
       </Container>

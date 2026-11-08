@@ -13,7 +13,7 @@ export function QuoteEntrySection() {
       className="relative z-20 bg-brand-cream pb-12 pt-0 sm:pb-14"
     >
       <div className="relative z-20 mx-auto w-[80%] max-w-[80vw] -translate-y-[30%]">
-        <Reveal className="reveal--scale">
+        <Reveal variant="scale">
           <EntryQuoteSelector />
         </Reveal>
       </div>

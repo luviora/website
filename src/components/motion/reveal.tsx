@@ -9,7 +9,7 @@ type RevealProps = {
   delay?: number;
   as?: ElementType;
   threshold?: number;
-  variant?: "up" | "left" | "scale";
+  variant?: "up" | "left" | "right" | "scale" | "blur";
 };
 
 export function Reveal({
@@ -17,7 +17,7 @@ export function Reveal({
   className,
   delay = 0,
   as: Tag = "div",
-  threshold = 0.12,
+  threshold = 0.14,
   variant = "up",
 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
@@ -27,6 +27,14 @@ export function Reveal({
     const node = ref.current;
     if (!node) return;
 
+    const reduced =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) {
+      setShown(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry?.isIntersecting) {
@@ -34,7 +42,7 @@ export function Reveal({
           observer.disconnect();
         }
       },
-      { threshold, rootMargin: "0px 0px -8% 0px" },
+      { threshold, rootMargin: "0px 0px -10% 0px" },
     );
 
     observer.observe(node);
@@ -47,7 +55,9 @@ export function Reveal({
       className={cn(
         "reveal",
         variant === "left" && "reveal--left",
+        variant === "right" && "reveal--right",
         variant === "scale" && "reveal--scale",
+        variant === "blur" && "reveal--blur",
         shown && "reveal--in",
         className,
       )}

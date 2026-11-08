@@ -50,9 +50,15 @@ npm run test:e2e
 3. Integrar backend .NET / parceiros com `NUVIORA_SUBMISSION_MODE=integrated`.
 4. Lighthouse, axe e ampliação de E2E para os quatro produtos.
 
-## Documentação
-- [`docs/NUVIORA-GUIDELINES.md`](docs/NUVIORA-GUIDELINES.md) — diretrizes v2
-- [`docs/reference-analysis-pier-loovi.md`](docs/reference-analysis-pier-loovi.md) — benchmark
-- [`docs/reformulation-plan-v2.md`](docs/reformulation-plan-v2.md) — roadmap
-- Copy: `src/content/site-copy.ts`
-- Skill Cursor: `.cursor/skills/nuviora/SKILL.md`
+## Documentação (guidelines v3)
+
+| Camada | Onde |
+|--------|------|
+| Índice | [`docs/NUVIORA-GUIDELINES.md`](docs/NUVIORA-GUIDELINES.md) |
+| Plano do sistema | [`docs/guidelines-system-plan.md`](docs/guidelines-system-plan.md) |
+| Specs | [`docs/specs/00-index.md`](docs/specs/00-index.md) |
+| Rules Cursor | `.cursor/rules/*.mdc` |
+| Skills Cursor | `.cursor/skills/nuviora*` |
+| Copy | `src/content/site-copy.ts` |
+| Benchmark | [`docs/reference-analysis-pier-loovi.md`](docs/reference-analysis-pier-loovi.md) |
+| Roadmap | [`docs/reformulation-plan-v2.md`](docs/reformulation-plan-v2.md) |

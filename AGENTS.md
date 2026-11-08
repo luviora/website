@@ -7,3 +7,10 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Nuviora project guidance
+
+- Always-on rules: `.cursor/rules/nuviora-core.mdc`
+- Specs: `docs/specs/00-index.md`
+- Skills hub: `.cursor/skills/nuviora/SKILL.md`
+- Guidelines index: `docs/NUVIORA-GUIDELINES.md`

@@ -81,7 +81,7 @@ export function QuoteFlow({ product }: { product: ProductType }) {
   return (
     <div className="flex flex-1 flex-col px-4 pb-16 pt-8 sm:px-6 sm:pt-10">
       <header className="mx-auto flex w-full max-w-lg flex-col items-center">
-        <Link href="/" className="inline-flex" aria-label="Nuviora — início">
+        <Link href="/" className="inline-flex" aria-label="Nuviora, início">
           <Image
             src="/image/logo.png"
             alt="Nuviora"

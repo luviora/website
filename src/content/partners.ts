@@ -1,5 +1,5 @@
 /**
- * Logos de seguradoras (SUSEP) — paths em /public/partners/.
+ * Logos de seguradoras (SUSEP). Paths em /public/partners/.
  * Troque pelos vetores do kit oficial quando liberados (ver public/partners/README.md).
  */
 export type InsurancePartner = {

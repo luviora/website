@@ -1,0 +1,15 @@
+---
+description: Copy Nuviora — site-copy.ts e microcopy comercial
+globs: src/content/site-copy.ts,src/content/**/*.ts,src/components/marketing/**/*.tsx
+alwaysApply: false
+---
+
+# Copy
+
+- Editar textos em `src/content/site-copy.ts` (spec: `docs/specs/copy.md`)
+- Fórmula: benefício → prova de simplicidade → CTA verbo+objeto
+- Proibido: preço/CET/taxa/aprovação inventados; “Home Equity”; “mais barato”; stats falsos
+- Demo note obrigatória perto de formulários
+- FAQ na voz do usuário; frases de dobra ≤ ~20 palavras
+- Após mudar H1/CTA home: atualizar E2E se necessário + `npm run build`
+- Skill: `.cursor/skills/nuviora-copy/SKILL.md`

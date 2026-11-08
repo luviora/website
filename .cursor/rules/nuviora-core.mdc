@@ -1,0 +1,27 @@
+---
+description: Hard rules Nuviora — marca, compliance, fontes de verdade (sempre)
+alwaysApply: true
+---
+
+# Nuviora — core
+
+## Fontes de verdade
+1. Specs: `docs/specs/00-index.md` → spec da área
+2. Copy: `src/content/site-copy.ts` (não espalhar strings de marketing)
+3. Tokens: `src/styles/tokens.css`
+4. Skill hub: `.cursor/skills/nuviora/SKILL.md`
+
+## Hard rules
+- Produto de crédito: **Empréstimos** — nunca “Home Equity”
+- Sem preço, CET numérico, taxa, aprovação ou stats fictícios
+- Logo `/image/logo.png`: **cores originais** — sem `invert` / `brightness-0`
+- Modo **demo** nomeado junto a captura de dados
+- Pier/Loovi: só estrutura/clareza — nunca identidade, claims ou preços
+- `(quote)` sem `SiteHeader`/`SiteFooter` de marketing
+- Tailwind v4 via `postcss.config.mjs` + `@tailwindcss/postcss` (ver `docs/specs/deploy-vercel.md`)
+
+## Antes de codar UI/copy
+Ler a spec correspondente em `docs/specs/` e a skill da área (`nuviora-copy` | `nuviora-ui` | `nuviora-quote` | `nuviora-deploy`).
+
+## Next.js 16
+APIs podem divergir do training — consultar `node_modules/next/dist/docs/` antes de padrões novos.

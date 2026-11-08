@@ -1,0 +1,17 @@
+---
+description: Cotador Nuviora — entry, QUOTE_CONFIG, shell /cotar
+globs: src/features/quotes/**/*,src/components/quotes/**/*,src/app/(quote)/**/*,src/app/api/quote-requests/**/*
+alwaysApply: false
+---
+
+# Cotador
+
+Spec: `docs/specs/cotador.md` + `docs/specs/compliance-demo.md`
+
+- Steps só em `QUOTE_CONFIG` (`features/quotes/config/products.ts`)
+- Schemas Zod via `build-step-schema`; form = `QuoteStepForm` + RHF
+- Shell `/cotar`: logo, progresso, floating labels, CTA mint **Avançar** — sem nav marketing
+- Demo / disclosures honestos; sem prêmio ou CET inventado no resumo
+- Produtos: `auto` | `incendio` | `fianca` | `emprestimos`
+- `NUVIORA_SUBMISSION_MODE` controla envio; default demo
+- Skill: `.cursor/skills/nuviora-quote/SKILL.md`

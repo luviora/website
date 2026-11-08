@@ -5,7 +5,7 @@ test("home to auto quote demo", async ({ page }) => {
   await page.goto("/");
   await expect(
     page.getByRole("heading", {
-      name: /Proteção e crédito que cabem na sua vida/,
+      name: /Proteção e crédito que cabem no seu momento de vida/,
     }),
   ).toBeVisible();
   await page.getByRole("link", { name: /Seguro Auto/i }).first().click();

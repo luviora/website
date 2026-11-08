@@ -4,8 +4,10 @@ Baseado em Pier/Loovi + diretrizes Nuviora v1.
 
 ## Fase A — Governança ✅
 - [x] Análise Pier/Loovi
-- [x] `NUVIORA-GUIDELINES.md` v2
-- [x] Skill `.cursor/skills/nuviora`
+- [x] `NUVIORA-GUIDELINES.md` v2 → **v3** (índice + specs)
+- [x] Skill `.cursor/skills/nuviora` + skills copy/ui/quote/deploy
+- [x] Rules `.cursor/rules/*.mdc`
+- [x] Specs `docs/specs/*` + `docs/guidelines-system-plan.md`
 - [x] `src/content/site-copy.ts`
 
 ## Fase B — Landing ✅ (esta entrega)

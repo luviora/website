@@ -1,35 +1,36 @@
 /**
- * Microcopy canônico Nuviora — única fonte para marketing e cotador (PT-BR).
+ * Microcopy canônico Nuviora. Única fonte para marketing e cotador (PT-BR).
  *
- * Copy comercial (vendedora) + compliance:
- * - Benefício primeiro, prova depois; verbos de ação nos CTAs.
- * - Sem preço, CET, taxa, aprovação ou tempo inventados.
- * - Sem “mais barato”, “garantido”, “aprovação imediata”.
- * - Demo sempre nomeado quando houver captura de dados.
- * - Empréstimos ≠ Home Equity.
+ * Narrativa da home: proteção e crédito → simule em minutos →
+ * melhores propostas dos parceiros → clareza, revisão e demo honesto.
  */
 
 export const siteCopy = {
   hero: {
-    title: "Proteção e crédito que cabem na sua vida.",
-    titleAccent: "Simule em minutos. Entenda cada passo.",
-    body: "Escolha o produto, responda perguntas claras e revise tudo antes de seguir — sem pressão e sem preço inventado.",
+    title: "Proteção e crédito que cabem no seu momento de vida.",
+    titleAccent: "Simule em minutos e tenha as melhores propostas.",
+    body: "No momento em que você precisa, escolha o produto, responda com clareza e revise o resumo. As propostas vêm dos parceiros. Aqui você simula sem pressão e sem preço inventado.",
     ctaPrimary: "Começar simulação",
     ctaSecondary: "Ver como funciona",
   },
   quoteEntry: {
     title: "O que você quer resolver hoje?",
-    subtitle: "Escolha um caminho e comece a simulação.",
-    demoNote: "Demonstração — sem envio a parceiros.",
+    subtitle:
+      "Escolha um caminho, simule em minutos e avance rumo às melhores propostas.",
+    demoNote: "Demonstração. Sem envio a parceiros.",
   },
   trust: {
+    label: "Por que a Nuviora",
+    title: "Clareza do início às propostas",
+    description:
+      "Três movimentos simples para simular com confiança e chegar às melhores opções dos parceiros.",
     pipelineHint: "Explore a jornada: toque em cada etapa",
     items: [
       {
         title: "Poucos passos",
-        body: "Só o essencial. Cada pergunta tem um motivo.",
+        body: "Só o essencial. Cada pergunta aproxima você da proposta certa.",
         pipelineDetail:
-          "Blocos curtos por produto — veículo, imóvel, locação ou crédito — para você avançar sem formulário infinito.",
+          "Blocos curtos por produto: veículo, imóvel, locação ou crédito. Você avança sem formulário infinito.",
       },
       {
         title: "Linguagem clara",
@@ -39,7 +40,7 @@ export const siteCopy = {
       },
       {
         title: "Você no controle",
-        body: "Revise o resumo e só então decida seguir.",
+        body: "Revise o resumo e só então decida seguir para as propostas.",
         pipelineDetail:
           "Antes de qualquer envio, o resumo é seu. No demo, os dados ficam só na sessão.",
       },
@@ -47,29 +48,31 @@ export const siteCopy = {
     photoCaption: "Decisões do dia a dia, no seu tempo.",
   },
   products: {
+    label: "Comece por aqui",
     sectionTitle: "Escolha por intenção",
     sectionBody:
-      "Quatro caminhos. Uma experiência fluida. Comece pelo que você precisa agora.",
+      "Quatro caminhos de proteção e crédito. Comece pelo que você precisa agora e siga até as propostas.",
   },
   comoFuncionaPage: {
     title: "Como funciona",
     intro:
-      "Você escolhe o produto, responde com clareza e revisa um resumo. No demo, nenhuma proposta financeira é gerada — o fluxo é o mesmo da operação real.",
+      "Você escolhe o produto, responde com clareza e revisa um resumo. No demo não geramos proposta financeira. O fluxo é o mesmo da operação real, quando os parceiros entram com as melhores opções.",
   },
   understand: {
+    label: "Transparência",
     title: "Entenda antes de contratar",
     items: [
       "CET e custos totais só aparecem quando um parceiro real retornar proposta.",
-      "Seguros podem ter franquia, carência e exclusões — leia as condições da oferta.",
+      "Seguros podem ter franquia, carência e exclusões. Leia as condições da oferta.",
       "Empréstimos com garantia envolvem avaliação do bem e risco sobre o patrimônio.",
-      "Aprovações dependem de análise e política do parceiro — não prometemos resultado.",
+      "Aprovações dependem de análise e política do parceiro. Não prometemos resultado.",
     ],
   },
   footer: {
     channelsTitle: "Canais de atendimento",
     channelsHours: ["Segunda a sexta: 8h às 18h", "Sábado: 8h às 12h"],
     channelsNote:
-      "Horários referenciais — atualize quando a operação assistida estiver ativa.",
+      "Horários referenciais. Atualize quando a operação assistida estiver ativa.",
     channels: [
       {
         label: "Central de atendimento",
@@ -91,7 +94,7 @@ export const siteCopy = {
     ],
     productsTitle: "Produtos",
     tagline:
-      "Comparação e encaminhamento de seguros e crédito — com linguagem clara e revisão antes do envio.",
+      "Simule proteção e crédito com clareza. As melhores propostas vêm dos parceiros, com revisão antes do envio.",
     partnersLead:
       "Na operação com parceiros, os seguros são ofertados por seguradoras autorizadas a operar pela SUSEP.",
     partnersNote:
@@ -116,18 +119,23 @@ export const siteCopy = {
   },
   prefooter: {
     eyebrow: "Próximo passo",
-    title: "Sua simulação começa agora.",
-    body: "Escolha o produto, avance no seu ritmo e revise com tranquilidade. No demo você percorre a jornada completa — sem preço inventado e sem envio a parceiros.",
+    title: "Comece agora e avance até as propostas.",
+    body: "Escolha o produto, simule no seu ritmo e revise com tranquilidade. No demo você percorre a jornada completa, sem preço inventado e sem envio a parceiros.",
     ctaPrimary: "Simular agora",
     ctaSecondary: "Ainda tenho dúvidas",
   },
   faq: {
+    label: "FAQ",
     pageTitle: "Dúvidas frequentes",
     sectionTitle: "Perguntas frequentes",
     items: [
       {
         q: "A Nuviora vende seguro ou empréstimo diretamente?",
-        a: "Não. Somos uma plataforma de comparação e encaminhamento. O produto final depende de parceiros integrados — seguradoras ou instituições financeiras.",
+        a: "Não. Somos uma plataforma de comparação e encaminhamento. As propostas vêm de parceiros: seguradoras ou instituições financeiras.",
+      },
+      {
+        q: "O que significa ter as melhores propostas?",
+        a: "Significa organizar sua simulação com clareza para receber opções dos parceiros integrados. No demo não exibimos preços. Na operação real, as propostas chegam com as condições de cada parceiro.",
       },
       {
         q: "Os valores da simulação são reais?",
@@ -139,35 +147,37 @@ export const siteCopy = {
       },
       {
         q: "Empréstimos para PF e PJ são iguais?",
-        a: "O fluxo é semelhante, mas campos e elegibilidade mudam conforme o tipo de pessoa e a garantia. Sempre falamos em Empréstimos — nunca Home Equity.",
+        a: "O fluxo é semelhante, mas campos e elegibilidade mudam conforme o tipo de pessoa e a garantia. Sempre falamos em Empréstimos, nunca Home Equity.",
       },
       {
         q: "Vale a pena começar pela simulação?",
-        a: "Sim. Em poucos passos você organiza o que precisa e chega a um resumo claro — a melhor forma de decidir o próximo passo com segurança.",
+        a: "Sim. Em poucos minutos você organiza o que precisa, revisa um resumo claro e fica pronto para as melhores propostas dos parceiros.",
       },
     ],
   },
   quoteFlow: {
     shellSubtitle: "Simulação guiada · sem compromisso",
-    demoBadge: "Modo demonstração — nenhum dado será enviado",
+    demoBadge: "Modo demonstração. Nenhum dado será enviado.",
     reviewTitle: "Revise sua simulação",
-    reviewBody: "Confira as informações. Não há proposta vinculante nesta etapa.",
+    reviewBody:
+      "Confira as informações. Nesta etapa não há proposta vinculante. Com a integração ativa, os parceiros entram com as opções.",
     finishCta: "Concluir demonstração",
   },
   howItWorks: {
-    title: "Do clique à revisão — sem mistério",
+    label: "Como funciona",
+    title: "Três passos simples até a sua simulação",
     steps: [
       {
-        title: "Escolha o produto",
-        body: "Auto, incêndio, fiança ou empréstimo — PF ou PJ quando fizer sentido.",
+        title: "Escolha o que precisa",
+        body: "Seguro auto, incêndio, fiança ou empréstimos. Pessoa física ou jurídica, conforme o seu caso.",
       },
       {
-        title: "Responda com contexto",
-        body: "Cada campo tem um motivo. Você pode voltar sem perder o que já preencheu.",
+        title: "Responda com tranquilidade",
+        body: "Perguntas objetivas, no seu ritmo. Se quiser mudar algo, é só voltar. Nada se perde pelo caminho.",
       },
       {
-        title: "Revise e conclua",
-        body: "No demo, você vê o fluxo completo. Com parceiros, propostas reais entram no jogo.",
+        title: "Revise e siga em frente",
+        body: "Confira o resumo antes de continuar. No demo você treina o fluxo. Depois, os parceiros trazem as propostas.",
       },
     ],
   },
@@ -176,42 +186,42 @@ export const siteCopy = {
 export const productPages = {
   auto: {
     title: "Seguro Auto",
-    body: "Proteja o carro do jeito que você usa. Conte sobre o veículo e preferências de cobertura — sem consulta automática a FIPE ou placa nesta demonstração.",
+    body: "Proteja o carro do jeito que você usa. Conte sobre o veículo e suas preferências de cobertura. Nesta demonstração não consultamos FIPE nem placa. Na operação real, as propostas vêm dos parceiros.",
     cta: "Simular seguro auto",
   },
   incendio: {
     title: "Seguro Incêndio",
-    body: "Residencial ou comercial, com clareza do início ao fim. Valor de mercado e capital segurado são conceitos distintos — explicamos na jornada.",
+    body: "Residencial ou comercial, com clareza do início às propostas. Valor de mercado e capital segurado são conceitos distintos. Explicamos na jornada.",
     cta: "Simular seguro incêndio",
   },
   fianca: {
     title: "Seguro Fiança",
-    body: "Facilite a locação com análise conforme a política da seguradora. Não garantimos aprovação — e deixamos isso claro desde o primeiro passo.",
+    body: "Facilite a locação com análise conforme a política da seguradora. Não garantimos aprovação. Deixamos isso claro desde o primeiro passo da simulação.",
     cta: "Simular seguro fiança",
   },
   emprestimos: {
     title: "Empréstimos",
-    lede: "Crédito para PF e PJ, com garantia quando fizer sentido — sempre com análise.",
-    body: "Não usamos o termo Home Equity. Elegibilidade, taxas e CET dependem de parceiros. No demo, você percorre o fluxo completo sem condições fictícias.",
+    lede: "Crédito para PF e PJ, com garantia quando fizer sentido e sempre com análise.",
+    body: "Não usamos o termo Home Equity. Elegibilidade, taxas e CET dependem dos parceiros. No demo você percorre o fluxo completo, sem condições fictícias, pronto para as propostas reais.",
     cta: "Simular empréstimo",
   },
 } as const;
 
 export const productCopy = {
   auto: {
-    short: "Proteja o carro do jeito que você usa.",
+    short: "Proteja o carro e avance até as melhores propostas.",
     cotadorHint: "Vamos conhecer seu carro",
   },
   incendio: {
-    short: "Imóvel residencial ou comercial, com clareza.",
+    short: "Imóvel residencial ou comercial, com clareza até a proposta.",
     cotadorHint: "Conte sobre o imóvel",
   },
   fianca: {
-    short: "Locação mais simples, sujeita à análise.",
+    short: "Locação mais simples, com análise e propostas dos parceiros.",
     cotadorHint: "Informe o aluguel e o perfil",
   },
   emprestimos: {
-    short: "PF e PJ, com garantia quando fizer sentido.",
+    short: "Crédito PF e PJ, com garantia quando fizer sentido.",
     cotadorHint: "Qual valor você procura?",
   },
 } as const;

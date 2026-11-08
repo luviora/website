@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 export function Logo({ className }: { className?: string }) {
   return (
-    <Link href="/" className={className} aria-label="Nuviora — início">
+    <Link href="/" className={className} aria-label="Nuviora, início">
       <Image
         src="/image/logo.png"
         alt="Nuviora"

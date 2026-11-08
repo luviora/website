@@ -122,7 +122,7 @@ export const QUOTE_CONFIG: Record<ProductType, QuoteProductConfig> = {
             name: "estimatedValue",
             label: "Valor estimado do imóvel (R$)",
             type: "number",
-            helper: "Referência — não é capital segurado automático.",
+            helper: "Referência. Não é capital segurado automático.",
             required: true,
           },
         ],

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | Nuviora",
   },
   description:
-    "Simule seguro auto, incêndio, fiança e empréstimos PF/PJ com passos claros. Linguagem direta, revisão antes de enviar — demonstração sem preço inventado.",
+    "Proteção e crédito que cabem no seu momento de vida. Simule em minutos e compare propostas de parceiros, com passos claros e sem preço inventado.",
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [{ url: "/favicon.ico", sizes: "any" }],
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nuviora | Proteção e crédito sem complicar",
     description:
-      "Simule seguro auto, incêndio, fiança e empréstimos PF/PJ com passos claros. Linguagem direta, revisão antes de enviar.",
+      "Proteção e crédito que cabem no seu momento de vida. Simule em minutos e compare propostas de parceiros, com passos claros.",
     locale: "pt_BR",
     type: "website",
   },

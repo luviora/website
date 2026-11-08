@@ -43,8 +43,8 @@ export function EntryQuoteSelector() {
                   className={cn(
                     "group relative flex aspect-[5/4] flex-col justify-between overflow-hidden rounded-2xl sm:aspect-[4/3]",
                     "shadow-[0_8px_28px_rgb(16_45_48/0.1)]",
-                    "transition-[transform,box-shadow] duration-300 ease-[var(--ease-standard)]",
-                    "hover:-translate-y-1.5 hover:shadow-[0_18px_44px_rgb(16_45_48/0.18)]",
+                    "transition-[transform,box-shadow] duration-500 ease-[var(--ease-standard)]",
+                    "hover:-translate-y-2 hover:shadow-[0_22px_52px_rgb(16_45_48/0.22)]",
                     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/50 focus-visible:ring-offset-2",
                   )}
                   onClick={() =>
@@ -56,7 +56,7 @@ export function EntryQuoteSelector() {
                     alt={visual.imageAlt}
                     fill
                     sizes="(max-width: 1024px) 45vw, 20vw"
-                    className="object-cover transition-transform duration-700 ease-[var(--ease-standard)] group-hover:scale-105"
+                    className="object-cover transition-transform duration-[900ms] ease-[var(--ease-standard)] group-hover:scale-110"
                     style={{ objectPosition: visual.objectPosition }}
                   />
                   <div

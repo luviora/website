@@ -67,26 +67,139 @@
   }
 }
 
-/* Hero: solid navy plane + soft light — Pier/Loovi contraste, identidade Nuviora */
+/* Hero: base navy + orbs de gradiente em movimento contínuo */
 .hero-gradient {
-  background:
-    radial-gradient(ellipse 90% 70% at 85% 20%, rgb(33 134 108 / 0.18), transparent 55%),
-    linear-gradient(165deg, #0b2224 0%, #102d30 48%, #153a38 100%);
+  background: linear-gradient(165deg, #0b2224 0%, #102d30 48%, #153a38 100%);
+  position: relative;
+  overflow: clip;
+}
+
+.hero-gradient-motion {
+  pointer-events: none;
+  position: absolute;
+  inset: -15%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-gradient-motion span {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  filter: blur(8px);
+  will-change: transform, opacity;
+}
+
+.hero-gradient-motion span:nth-child(1) {
+  top: -10%;
+  right: -5%;
+  width: min(70vw, 720px);
+  height: min(70vw, 720px);
+  background: radial-gradient(
+    circle,
+    rgb(33 134 108 / 0.42) 0%,
+    rgb(33 134 108 / 0.12) 42%,
+    transparent 70%
+  );
+  animation: hero-orb-a 11s ease-in-out infinite alternate;
+}
+
+.hero-gradient-motion span:nth-child(2) {
+  bottom: -15%;
+  left: -10%;
+  width: min(65vw, 640px);
+  height: min(65vw, 640px);
+  background: radial-gradient(
+    circle,
+    rgb(184 245 213 / 0.28) 0%,
+    rgb(33 134 108 / 0.14) 45%,
+    transparent 72%
+  );
+  animation: hero-orb-b 13s ease-in-out infinite alternate;
+}
+
+.hero-gradient-motion span:nth-child(3) {
+  top: 35%;
+  left: 35%;
+  width: min(50vw, 480px);
+  height: min(50vw, 480px);
+  background: radial-gradient(
+    circle,
+    rgb(21 86 78 / 0.55) 0%,
+    transparent 68%
+  );
+  animation: hero-orb-c 9s ease-in-out infinite alternate;
 }
 
 .prefooter-surface {
   background: linear-gradient(165deg, #0b2224 0%, #102d30 55%, #143c38 100%);
+  position: relative;
+  /* Sem overflow clip: overflow-x:clip força overflow-y:auto e cortava o person-2 */
+  overflow: visible;
 }
 
-/* Scroll reveal — fade + rise + slight blur */
+.prefooter-surface::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+  inset: auto -15% -30% 40%;
+  height: 70%;
+  background: radial-gradient(
+    circle at 30% 40%,
+    rgb(33 134 108 / 0.22),
+    transparent 65%
+  );
+  animation: section-breathe 7s var(--ease-standard) infinite alternate;
+}
+
+/* Logo mark no footer: movimento idle (sem hover) */
+.footer-logo-mark {
+  position: relative;
+  isolation: isolate;
+  animation: footer-logo-float 4.2s var(--ease-standard) infinite alternate;
+  box-shadow:
+    0 8px 24px rgb(184 245 213 / 0.12),
+    0 0 0 0 rgb(184 245 213 / 0.2);
+}
+
+.footer-logo-mark::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    rgb(184 245 213 / 0.55),
+    rgb(255 255 255 / 0.9),
+    rgb(184 245 213 / 0.45)
+  );
+  background-size: 200% 200%;
+  opacity: 0.85;
+  animation: footer-logo-sheen 5s linear infinite;
+}
+
+.footer-logo-mark::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: white;
+}
+
+/* Scroll reveal: fade + rise + blur */
 .reveal {
   opacity: 0;
-  filter: blur(6px);
-  transform: translate3d(0, 28px, 0);
+  filter: blur(8px);
+  transform: translate3d(0, 40px, 0);
   transition:
-    opacity 0.7s var(--ease-standard),
-    transform 0.7s var(--ease-standard),
-    filter 0.7s var(--ease-standard);
+    opacity 0.85s var(--ease-standard),
+    transform 0.85s var(--ease-standard),
+    filter 0.85s var(--ease-standard);
   will-change: opacity, transform, filter;
 }
 
@@ -97,19 +210,124 @@
 }
 
 .reveal--left {
-  transform: translate3d(-24px, 0, 0);
+  transform: translate3d(-36px, 12px, 0);
 }
 
 .reveal--left.reveal--in {
   transform: translate3d(0, 0, 0);
 }
 
+.reveal--right {
+  transform: translate3d(36px, 12px, 0);
+}
+
+.reveal--right.reveal--in {
+  transform: translate3d(0, 0, 0);
+}
+
 .reveal--scale {
-  transform: translate3d(0, 16px, 0) scale(0.97);
+  transform: translate3d(0, 28px, 0) scale(0.94);
 }
 
 .reveal--scale.reveal--in {
   transform: translate3d(0, 0, 0) scale(1);
+}
+
+.reveal--blur {
+  transform: translate3d(0, 18px, 0);
+  filter: blur(14px);
+}
+
+.reveal--blur.reveal--in {
+  transform: translate3d(0, 0, 0);
+  filter: blur(0);
+}
+
+.section-lift {
+  transition:
+    transform 0.45s var(--ease-standard),
+    box-shadow 0.45s var(--ease-standard);
+}
+
+.section-lift:hover {
+  transform: translateY(-4px);
+}
+
+@keyframes hero-orb-a {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.75;
+  }
+  to {
+    transform: translate3d(-28%, 22%, 0) scale(1.35);
+    opacity: 1;
+  }
+}
+
+@keyframes hero-orb-b {
+  from {
+    transform: translate3d(0, 0, 0) scale(1.05);
+    opacity: 0.65;
+  }
+  to {
+    transform: translate3d(32%, -18%, 0) scale(1.4);
+    opacity: 1;
+  }
+}
+
+@keyframes hero-orb-c {
+  from {
+    transform: translate3d(-12%, 8%, 0) scale(0.9);
+    opacity: 0.55;
+  }
+  to {
+    transform: translate3d(18%, -14%, 0) scale(1.25);
+    opacity: 0.95;
+  }
+}
+
+@keyframes section-breathe {
+  from {
+    opacity: 0.45;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0.9;
+    transform: translate3d(-6%, -4%, 0);
+  }
+}
+
+@keyframes person-float {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -12px, 0);
+  }
+}
+
+@keyframes footer-logo-float {
+  from {
+    transform: translate3d(0, 0, 0);
+    box-shadow:
+      0 8px 24px rgb(184 245 213 / 0.12),
+      0 0 0 0 rgb(184 245 213 / 0.15);
+  }
+  to {
+    transform: translate3d(0, -7px, 0);
+    box-shadow:
+      0 20px 44px rgb(184 245 213 / 0.32),
+      0 0 0 7px rgb(184 245 213 / 0.1);
+  }
+}
+
+@keyframes footer-logo-sheen {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
 }
 
 @keyframes step-enter {
@@ -169,15 +387,25 @@
   .reveal,
   .reveal--in,
   .reveal--left,
-  .reveal--scale {
+  .reveal--right,
+  .reveal--scale,
+  .reveal--blur {
     opacity: 1;
     filter: none;
     transform: none;
     transition: none;
   }
 
-  .pipeline-node--active {
+  .pipeline-node--active,
+  .hero-gradient-motion span,
+  .prefooter-surface::before,
+  .footer-logo-mark,
+  .footer-logo-mark::before {
     animation: none;
+  }
+
+  .section-lift:hover {
+    transform: none;
   }
 
   *,
