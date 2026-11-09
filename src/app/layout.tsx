@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Manrope } from "next/font/google";
+import { GoogleAnalytics } from "@/components/analytics/google-analytics";
+import { WebVitalsReporter } from "@/components/analytics/web-vitals-reporter";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
   getSiteUrl,
@@ -120,6 +122,8 @@ export default function RootLayout({
       className={`${manrope.variable} ${dmSans.variable} h-full`}
     >
       <body className="flex min-h-dvh flex-col overscroll-x-none">
+        <GoogleAnalytics />
+        <WebVitalsReporter />
         <JsonLd />
         <a
           href="#conteudo"

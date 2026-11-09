@@ -41,6 +41,7 @@ Permitido:
 
 ## Analytics
 - Eventos em `src/lib/analytics/events.ts` — sem PII em payloads
+- Web Vitals (LCP/CLS/INP/FCP/TTFB) via `useReportWebVitals` → GA4 quando `NEXT_PUBLIC_GA_MEASUREMENT_ID` estiver setado
 - Não logar formulários completos em analytics de marketing
 
 ## Checklist de página (release)
