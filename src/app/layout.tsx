@@ -14,6 +14,8 @@ const manrope = Manrope({
   subsets: ["latin"],
   display: "swap",
   weight: ["700", "800"],
+  preload: true,
+  adjustFontFallback: true,
 });
 
 const dmSans = DM_Sans({
@@ -21,6 +23,8 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "500", "600"],
+  preload: true,
+  adjustFontFallback: true,
 });
 
 const siteUrl = getSiteUrl();

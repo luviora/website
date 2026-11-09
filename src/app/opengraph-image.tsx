@@ -1,11 +1,27 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
+import { siteCopy } from "@/content/site-copy";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
 export const alt = `${SITE_NAME} | ${SITE_TAGLINE}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpenGraphImage() {
+async function loadPngDataUrl(relativePath: string) {
+  const bytes = await readFile(join(process.cwd(), "public", relativePath));
+  return `data:image/png;base64,${bytes.toString("base64")}`;
+}
+
+export default async function OpenGraphImage() {
+  const [logoSrc, heroSrc] = await Promise.all([
+    loadPngDataUrl("image/logo.png"),
+    loadPngDataUrl("image/persons/person-1.png"),
+  ]);
+
+  const headline = siteCopy.hero.title.replace(/\.$/, "");
+  const support = siteCopy.hero.titleAccent;
+
   return new ImageResponse(
     (
       <div
@@ -13,61 +29,118 @@ export default function OpenGraphImage() {
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          padding: "64px",
-          background: "linear-gradient(165deg, #0b2224 0%, #102d30 48%, #153a38 100%)",
+          position: "relative",
+          overflow: "hidden",
+          background: "linear-gradient(155deg, #0b2224 0%, #102d30 42%, #163f3c 100%)",
           color: "#F8F8F4",
           fontFamily: "sans-serif",
         }}
       >
+        {/* Atmosphere */}
         <div
           style={{
+            position: "absolute",
+            inset: 0,
             display: "flex",
-            alignItems: "center",
-            gap: 16,
-            fontSize: 36,
-            fontWeight: 700,
-            letterSpacing: "-0.02em",
+            background:
+              "radial-gradient(circle at 78% 42%, rgba(184,245,213,0.18) 0%, transparent 42%)",
+          }}
+        />
+
+        {/* Left copy column */}
+        <div
+          style={{
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            width: "58%",
+            height: "100%",
+            padding: "52px 36px 52px 56px",
           }}
         >
           <div
             style={{
-              width: 48,
-              height: 48,
-              borderRadius: 12,
-              background: "#B8F5D5",
               display: "flex",
               alignItems: "center",
-              justifyContent: "center",
-              color: "#102D30",
-              fontSize: 28,
-              fontWeight: 800,
+              background: "#FFFFFF",
+              borderRadius: 18,
+              padding: "14px 22px",
             }}
           >
-            N
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={logoSrc}
+              alt={SITE_NAME}
+              height={52}
+              style={{ height: 52, width: "auto" }}
+            />
           </div>
-          {SITE_NAME}
-        </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 18, maxWidth: 920 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 20, maxWidth: 620 }}>
+            <div
+              style={{
+                display: "flex",
+                fontSize: 52,
+                fontWeight: 800,
+                lineHeight: 1.12,
+                letterSpacing: "-0.03em",
+              }}
+            >
+              {headline}
+            </div>
+            <div
+              style={{
+                display: "flex",
+                fontSize: 28,
+                fontWeight: 600,
+                lineHeight: 1.35,
+                color: "#B8F5D5",
+                maxWidth: 560,
+              }}
+            >
+              {support}
+            </div>
+          </div>
+
           <div
             style={{
-              fontSize: 58,
-              fontWeight: 800,
-              lineHeight: 1.1,
-              letterSpacing: "-0.03em",
+              display: "flex",
+              fontSize: 22,
+              color: "rgba(248,248,244,0.72)",
+              letterSpacing: "0.02em",
             }}
           >
-            {SITE_TAGLINE}
-          </div>
-          <div style={{ fontSize: 28, color: "#B8F5D5", fontWeight: 600 }}>
-            Simule em minutos e tenha as melhores propostas.
+            nuviora-sec.vercel.app
           </div>
         </div>
 
-        <div style={{ fontSize: 22, color: "rgba(248,248,244,0.72)" }}>
-          nuviora-sec.vercel.app
+        {/* Hero person */}
+        <div
+          style={{
+            position: "absolute",
+            right: 0,
+            bottom: 0,
+            top: 24,
+            width: "48%",
+            display: "flex",
+            alignItems: "flex-end",
+            justifyContent: "center",
+          }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={heroSrc}
+            alt=""
+            width={560}
+            height={620}
+            style={{
+              width: 560,
+              height: 620,
+              objectFit: "contain",
+              objectPosition: "bottom center",
+            }}
+          />
         </div>
       </div>
     ),

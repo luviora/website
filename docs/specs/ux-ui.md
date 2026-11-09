@@ -76,3 +76,8 @@
 ## Layout shell
 - `(marketing)`: `SiteHeader` + `SiteFooter`
 - `(quote)`: **sem** header/footer de marketing — shell próprio do cotador
+- Header marketing: **fundo sólido** (`bg-background`); taxonomia em dropdowns (`src/content/nav.ts`)
+  - Seguros → Auto / Incêndio / Fiança
+  - Empréstimos (link)
+  - Serviços → Sinistro / Minhas cotações / Corretores
+  - Ajuda → Como funciona / Dúvidas

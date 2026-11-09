@@ -146,10 +146,11 @@ export function QuoteFlow({ product }: { product: ProductType }) {
           <Image
             src="/image/logo.png"
             alt="Nuviora"
-            width={2172}
-            height={724}
+            width={260}
+            height={87}
             priority
-            className="h-[2.7rem] w-auto sm:h-12"
+            sizes="(max-width: 640px) 180px, 220px"
+            className="h-[3.24rem] w-auto sm:h-[3.6rem]"
           />
         </Link>
         <p className="mt-2 text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-brand-green/80">

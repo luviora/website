@@ -1,0 +1,31 @@
+# Nuviora
+
+> Plataforma B2C de simulação de seguros e empréstimos. Comparação e encaminhamento — a Nuviora não é seguradora, corretora nem instituição financeira.
+
+Em demonstração, não há preço, CET, taxa ou aprovação inventados. Propostas reais vêm de parceiros na operação integrada.
+
+## Produtos
+
+- [Seguro Auto](https://nuviora-sec.vercel.app/seguros/auto): Simulação de proteção veicular com identificação FIPE
+- [Seguro Incêndio](https://nuviora-sec.vercel.app/seguros/incendio): Residencial ou comercial
+- [Seguro Fiança](https://nuviora-sec.vercel.app/seguros/fianca): Locação com análise do parceiro
+- [Empréstimos](https://nuviora-sec.vercel.app/emprestimos): Crédito PF/PJ (nunca “Home Equity” na UI)
+
+## Jornadas
+
+- [Início / cotador](https://nuviora-sec.vercel.app/#cotador): Escolher produto e iniciar simulação
+- [Cotação Auto](https://nuviora-sec.vercel.app/cotar/auto): Fluxo guiado com steps na URL (`?step=`)
+- [Como funciona](https://nuviora-sec.vercel.app/como-funciona): Passos da jornada
+- [Dúvidas](https://nuviora-sec.vercel.app/duvidas): FAQ
+
+## Serviços
+
+- [Abrir sinistro](https://nuviora-sec.vercel.app/abrir-sinistro)
+- [Minhas cotações](https://nuviora-sec.vercel.app/minhas-cotacoes)
+- [Para corretores](https://nuviora-sec.vercel.app/para-corretores)
+
+## Opcional
+
+- [Privacidade](https://nuviora-sec.vercel.app/privacidade)
+- [Termos](https://nuviora-sec.vercel.app/termos)
+- [Sitemap](https://nuviora-sec.vercel.app/sitemap.xml)

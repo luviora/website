@@ -21,24 +21,25 @@ export function SiteFooter() {
               <Image
                 src="/image/logo.png"
                 alt="Nuviora"
-                width={2172}
-                height={724}
+                width={280}
+                height={93}
+                sizes="180px"
                 className="relative z-[1] h-[2.99rem] w-auto transition-transform duration-500 ease-[var(--ease-standard)] motion-safe:group-hover:scale-[1.04] sm:h-[3.36rem]"
               />
             </Link>
-            <p className="mt-5 max-w-[18rem] text-sm leading-relaxed text-white/65">
+            <p className="mt-5 max-w-[18rem] text-sm leading-relaxed text-white/70">
               {footer.tagline}
             </p>
           </div>
 
           <div className="lg:col-span-3">
-            <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-white/45">
+            <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-white/70">
               {footer.channelsTitle}
             </h2>
             <ul className="mt-5 space-y-4">
               {footer.channels.map((channel) => (
                 <li key={channel.label}>
-                  <p className="text-xs text-white/40">{channel.label}</p>
+                  <p className="text-xs text-white/65">{channel.label}</p>
                   <Link
                     href={channel.href}
                     className="mt-0.5 inline-block text-base font-medium text-brand-mint link-underline transition-colors duration-300 hover:text-white"
@@ -48,7 +49,7 @@ export function SiteFooter() {
                 </li>
               ))}
             </ul>
-            <ul className="mt-6 space-y-1 text-xs leading-relaxed text-white/45">
+            <ul className="mt-6 space-y-1 text-xs leading-relaxed text-white/65">
               {footer.channelsHours.map((h) => (
                 <li key={h}>{h}</li>
               ))}
@@ -56,7 +57,7 @@ export function SiteFooter() {
           </div>
 
           <div className="lg:col-span-2">
-            <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-white/45">
+            <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-white/70">
               {footer.productsTitle}
             </h2>
             <ul className="mt-5 space-y-3 text-sm">
@@ -74,7 +75,7 @@ export function SiteFooter() {
           </div>
 
           <div className="lg:col-span-3">
-            <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-white/45">
+            <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-white/70">
               {footer.linksTitle}
             </h2>
             <ul className="mt-5 space-y-3 text-sm">
@@ -103,7 +104,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-14 border-t border-white/10 pt-8">
-          <p className="max-w-4xl text-[0.6875rem] leading-[1.7] text-white/50 sm:text-xs">
+          <p className="max-w-4xl text-[0.6875rem] leading-[1.7] text-white/65 sm:text-xs">
             {footer.legalIntro} {footer.legalBody} {legal.address}. {legal.cnpj}.{" "}
             {legal.susepProcess}. Consulte{" "}
             <Link

@@ -56,9 +56,10 @@ export function PreFooterSection() {
             <Image
               src="/image/persons/person-2.png"
               alt="Pessoas em momento de decisão sobre proteção e crédito"
-              width={1194}
-              height={1317}
-              sizes="(max-width: 768px) 92vw, 42vw"
+              width={640}
+              height={706}
+              sizes="(max-width: 768px) 320px, 420px"
+              quality={75}
               className="h-auto w-full max-w-[min(100%,380px)] object-contain object-bottom motion-safe:animate-[person-float_5.5s_var(--ease-standard)_infinite_alternate] sm:max-w-[440px] md:max-h-[min(58vh,520px)] lg:max-h-[min(62vh,560px)]"
             />
           </div>

@@ -55,7 +55,8 @@ export function EntryQuoteSelector() {
                     src={visual.image}
                     alt={visual.imageAlt}
                     fill
-                    sizes="(max-width: 1024px) 45vw, 20vw"
+                    sizes="(max-width: 640px) 160px, (max-width: 1024px) 200px, 180px"
+                    quality={55}
                     className="object-cover transition-transform duration-[900ms] ease-[var(--ease-standard)] group-hover:scale-110"
                     style={{ objectPosition: visual.objectPosition }}
                   />

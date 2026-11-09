@@ -17,7 +17,9 @@ export function ProductQuadrantCard({ product }: { product: ProductDefinition })
         src={visual.image}
         alt={visual.imageAlt}
         fill
-        sizes="(max-width: 640px) 100vw, 50vw"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
+        quality={55}
+        loading="lazy"
         className="object-cover transition-transform duration-[900ms] ease-[var(--ease-standard)] group-hover:scale-[1.08]"
         style={{ objectPosition: visual.objectPosition }}
       />

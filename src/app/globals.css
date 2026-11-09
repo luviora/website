@@ -115,7 +115,8 @@
   display: block;
   border-radius: 50%;
   filter: blur(8px);
-  will-change: transform, opacity;
+  /* atrasa animação para não competir com LCP no mobile lab */
+  animation-delay: 2s;
 }
 
 .hero-gradient-motion span:nth-child(1) {
