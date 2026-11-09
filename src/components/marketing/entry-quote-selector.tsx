@@ -57,6 +57,8 @@ export function EntryQuoteSelector() {
                     fill
                     sizes="(max-width: 640px) 160px, (max-width: 1024px) 200px, 180px"
                     quality={55}
+                    loading="lazy"
+                    fetchPriority="low"
                     className="object-cover transition-transform duration-[900ms] ease-[var(--ease-standard)] group-hover:scale-110"
                     style={{ objectPosition: visual.objectPosition }}
                   />

@@ -14,7 +14,8 @@ const manrope = Manrope({
   subsets: ["latin"],
   display: "swap",
   weight: ["700", "800"],
-  preload: true,
+  // LCP mobile é o H1 com system-ui — não competir com preload de webfont
+  preload: false,
   adjustFontFallback: true,
 });
 
@@ -23,7 +24,7 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "500", "600"],
-  preload: true,
+  preload: false,
   adjustFontFallback: true,
 });
 

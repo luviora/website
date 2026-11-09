@@ -1,9 +1,22 @@
-import Image from "next/image";
 import Link from "next/link";
 import { siteCopy } from "@/content/site-copy";
 import { buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
 import { cn } from "@/lib/utils";
+
+const HERO_PERSON = {
+  src: "/image/persons/person-1-hero.webp",
+  srcSet: [
+    "/image/persons/person-1-hero-640.webp 640w",
+    "/image/persons/person-1-hero-828.webp 828w",
+    "/image/persons/person-1-hero-1080.webp 1080w",
+    "/image/persons/person-1-hero.webp 1262w",
+  ].join(", "),
+  // CSS display ≈ 85vw mobile / 48vw desktop; DPR cobre nitidez
+  sizes: "(max-width: 640px) 85vw, (max-width: 1024px) 70vw, 48vw",
+  width: 1262,
+  height: 1246,
+} as const;
 
 export function HeroSection() {
   const { hero } = siteCopy;
@@ -12,7 +25,7 @@ export function HeroSection() {
       {/* pb reserva a faixa onde ~30% do cotador sobrepõe o hero */}
       <Container className="relative z-10 grid min-h-[min(72dvh,720px)] grid-cols-1 items-center gap-8 pt-10 pb-24 sm:pb-28 lg:min-h-[min(100dvh,920px)] lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:pb-32 lg:pt-14">
         <div className="max-w-[36rem]">
-          {/* Tipografia de sistema no LCP (PageSpeed mobile); Manrope continua no restante do site */}
+          {/* Tipografia de sistema no LCP text fallback; Manrope no restante */}
           <h1
             className="text-[clamp(2.25rem,5vw,3.65rem)] font-extrabold leading-[1.05] tracking-[-0.03em] text-white"
             style={{
@@ -57,14 +70,21 @@ export function HeroSection() {
         </div>
 
         <div className="relative flex min-h-[min(47vh,426px)] items-end justify-center lg:min-h-[min(81vh,762px)] lg:items-center lg:justify-end">
-          <Image
-            src="/image/persons/person-1-hero.webp"
+          {/*
+            Proporção nativa 1262×1246 (object-contain + width/height).
+            srcSet estático = nitidez por display sem passar pelo optimizer sob demanda.
+          */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={HERO_PERSON.src}
+            srcSet={HERO_PERSON.srcSet}
+            sizes={HERO_PERSON.sizes}
+            width={HERO_PERSON.width}
+            height={HERO_PERSON.height}
             alt="Momento cotidiano de quem cuida do que importa"
-            width={480}
-            height={474}
-            quality={70}
-            sizes="(max-width: 640px) 180px, (max-width: 1024px) 280px, 400px"
-            className="h-auto max-h-[min(56vh,515px)] w-auto max-w-full object-contain object-bottom sm:max-h-[min(63vh,605px)] lg:max-h-[min(81vh,739px)] lg:motion-safe:animate-[person-float_5.5s_var(--ease-standard)_infinite_alternate]"
+            fetchPriority="high"
+            decoding="async"
+            className="h-auto max-h-[min(56vh,515px)] w-auto max-w-full object-contain object-bottom motion-safe:animate-[person-float_5.5s_var(--ease-standard)_infinite_alternate] sm:max-h-[min(63vh,605px)] lg:max-h-[min(81vh,739px)]"
           />
         </div>
       </Container>

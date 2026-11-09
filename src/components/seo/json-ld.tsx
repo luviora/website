@@ -1,10 +1,8 @@
-import { siteCopy } from "@/content/site-copy";
 import { PRODUCTS } from "@/features/products/catalog";
 import { getSiteUrl, SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
 export function JsonLd() {
   const siteUrl = getSiteUrl();
-  const faqItems = siteCopy.faq.items;
 
   const graph = {
     "@context": "https://schema.org",
@@ -75,19 +73,6 @@ export function JsonLd() {
           position: index + 1,
           name: product.title,
           url: `${siteUrl}${product.href}`,
-        })),
-      },
-      {
-        "@type": "FAQPage",
-        "@id": `${siteUrl}/duvidas#faq`,
-        url: `${siteUrl}/duvidas`,
-        mainEntity: faqItems.map((item) => ({
-          "@type": "Question",
-          name: item.q,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: item.a,
-          },
         })),
       },
       {
