@@ -505,15 +505,30 @@ export const QUOTE_CONFIG: Record<ProductType, QuoteProductConfig> = {
       },
       {
         id: "contact",
-        title: "Contato",
+        title: "Por onde falamos com você?",
+        description:
+          "Deixe um contato tranquilo. Usamos só para seguir com a simulação quando a operação estiver ativa.",
         fields: [
-          { name: "name", label: "Nome", type: "text", required: true },
-          { name: "document", label: "CPF ou CNPJ", type: "document", placeholder: "000.000.000-00", required: true },
-          { name: "phone", label: "Telefone", type: "phone", placeholder: "(00) 00000-0000", required: true },
+          { name: "name", label: "Seu nome", type: "text", required: true },
+          {
+            name: "document",
+            label: "CPF ou CNPJ",
+            type: "document",
+            placeholder: "000.000.000-00",
+            required: true,
+          },
+          {
+            name: "phone",
+            label: "Telefone / WhatsApp",
+            type: "phone",
+            placeholder: "(00) 00000-0000",
+            required: true,
+          },
           { name: "email", label: "E-mail", type: "email", required: true },
           {
             name: "consent",
-            label: "Autorizo contato para encaminhamento quando houver integração.",
+            label:
+              "Autorizo contato para encaminhamento quando houver integração.",
             type: "checkbox",
             required: true,
           },

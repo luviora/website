@@ -171,6 +171,16 @@ export const siteCopy = {
     reviewBody:
       "Confira as informações. Nesta etapa não há proposta vinculante. Com a integração ativa, os parceiros entram com as opções.",
     finishCta: "Concluir demonstração",
+    finishPending: "Concluindo…",
+    finishError:
+      "Não foi possível concluir agora. Tente de novo em alguns segundos.",
+    editCta: "Voltar e editar",
+    reviewEmptyHint:
+      "Ainda não há dados para revisar. Volte às etapas e complete a simulação.",
+    reviewEmptyError:
+      "Complete as etapas antes de concluir. Levamos você de volta ao início.",
+    formErrorSummary:
+      "Confira os campos destacados abaixo para continuar.",
   },
   howItWorks: {
     label: "Como funciona",

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight } from "lucide-react";
@@ -23,6 +23,7 @@ import {
   NativeSelect,
 } from "@/components/ui/form-controls";
 import { AUTO_USAGE_OPTIONS } from "@/content/auto-usage";
+import { siteCopy } from "@/content/site-copy";
 import { CepAddressFields } from "@/features/quotes/components/cep-address-fields";
 import {
   ChoiceCardsField,
@@ -30,6 +31,7 @@ import {
 } from "@/features/quotes/components/choice-cards-field";
 import { CoverageCardsField } from "@/features/quotes/components/coverage-cards-field";
 import { FipeVehicleFields } from "@/features/quotes/components/fipe-vehicle-fields";
+import { trackEvent } from "@/lib/analytics/events";
 import { cn } from "@/lib/utils";
 
 const FIPE_FIELD_TYPES = new Set<FieldType>([
@@ -89,11 +91,13 @@ export function QuoteStepForm({
   onValid: (values: Record<string, unknown>) => void;
 }) {
   const schema = useMemo(() => buildStepSchema(step), [step]);
+  const [formBanner, setFormBanner] = useState<string | null>(null);
 
   const form = useForm({
     resolver: zodResolver(schema),
     defaultValues,
     mode: "onBlur",
+    shouldFocusError: true,
   });
 
   const isLast = stepIndex === totalSteps - 1;
@@ -102,6 +106,7 @@ export function QuoteStepForm({
     step.fields.some((f) => f.type === "cep") &&
     step.fields.some((f) => f.name === "street");
   const coverageField = step.fields.find((f) => f.type === "coverageCards");
+  const isSubmitting = form.formState.isSubmitting;
 
   return (
     <div className="motion-safe:animate-[step-enter_var(--duration-step)_var(--ease-standard)]">
@@ -114,9 +119,30 @@ export function QuoteStepForm({
         </p>
       ) : null}
 
+      {formBanner ? (
+        <p
+          className="mt-4 rounded-xl border border-destructive/30 bg-destructive/5 px-3 py-2 text-center text-sm text-destructive"
+          role="alert"
+        >
+          {formBanner}
+        </p>
+      ) : null}
+
       <form
         className="mt-8 space-y-5"
-        onSubmit={form.handleSubmit(onValid)}
+        onSubmit={form.handleSubmit(
+          (values) => {
+            setFormBanner(null);
+            onValid(values);
+          },
+          () => {
+            setFormBanner(siteCopy.quoteFlow.formErrorSummary);
+            trackEvent("quote_validation_failed", {
+              product,
+              step: step.id,
+            });
+          },
+        )}
         noValidate
       >
         {usesFipeVehicle ? (
@@ -336,9 +362,10 @@ export function QuoteStepForm({
         <Button
           type="submit"
           size="lg"
+          disabled={isSubmitting}
           className={cn(
             "mt-2 h-14 w-full rounded-full bg-brand-mint text-base font-semibold text-brand-navy shadow-none",
-            "hover:bg-[#a8ecc8] hover:text-brand-navy",
+            "hover:bg-[#a8ecc8] hover:text-brand-navy disabled:opacity-60",
           )}
         >
           {isLast ? "Revisar" : "Avançar"}
